@@ -1,0 +1,57 @@
+// ===========================================================================
+// Base typo
+// ===========================================================================
+body,
+button {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-16);
+    font-weight: var(--fw-400);
+    font-style: normal;
+    text-decoration: none;
+    line-height: var(--lh-spacious);
+}
+
+// ===========================================================================
+// Heading typos
+// ===========================================================================
+h1,
+.typo-h1 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    line-height: var(--lh-none);
+}
+
+h2,
+.typo-h2 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    line-height: var(--lh-none);
+}
+
+h3,
+.typo-h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    line-height: var(--lh-none);
+}
+
+h4,
+.typo-h4 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    line-height: var(--lh-none);
+}
+
+h5,
+.typo-h5 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    line-height: var(--lh-none);
+}
+
+h6,
+.typo-h6 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    line-height: var(--lh-none);
+}
