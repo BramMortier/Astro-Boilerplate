@@ -1,16 +1,27 @@
 ---
+import "../styles/index.scss";
 
+import Button from "@components/Button.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body>
+        <Button text="Primary button" />
+        <Button text="Secondary button" class="c-button--secondary" />
+        <Button text="Tertiary button" class="c-button--tertiary" />
+    </body>
 </html>
+
+<style scoped lang="scss">
+    body {
+        padding: var(--space-16);
+    }
+</style>
+

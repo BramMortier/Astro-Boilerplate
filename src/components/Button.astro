@@ -1,0 +1,39 @@
+---
+interface Props {
+    text?: string;
+    class?: string;
+}
+
+const { text, class: className } = Astro.props;
+---
+
+<button class:list={["c-button", className]}>
+    {text}
+</button>
+
+<style scoped lang="scss">
+    .c-button {
+        outline: none;
+        border: 1px solid transparent;
+        background-color: var(--clr-black);
+        color: var(--clr-white);
+        padding-inline: var(--space-16);
+        height: 2.5rem;
+        transition: all ease 0.2s;
+
+        &--secondary {
+            background-color: transparent;
+            border: 1px solid var(--clr-black);
+            color: var(--clr-black);
+        }
+
+        &--tertiary {
+            background-color: transparent;
+            color: var(--clr-black);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+</style>
