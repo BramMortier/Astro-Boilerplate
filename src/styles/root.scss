@@ -1,0 +1,81 @@
+// =============================================================================
+// Fonts
+// =============================================================================
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+    // ===========================================================================
+    // Colors
+    // ===========================================================================
+    --clr-black: hsl(0, 0%, 0%);
+
+    --clr-grey-100: hsl(0, 0%, 10%);
+    --clr-grey-200: hsl(0, 0%, 20%);
+    --clr-grey-300: hsl(0, 0%, 30%);
+    --clr-grey-400: hsl(0, 0%, 40%);
+    --clr-grey-500: hsl(0, 0%, 50%);
+    --clr-grey-600: hsl(0, 0%, 60%);
+    --clr-grey-700: hsl(0, 0%, 70%);
+    --clr-grey-800: hsl(0, 0%, 80%);
+    --clr-grey-900: hsl(0, 0%, 90%);
+
+    --clr-white: hsl(0, 0%, 100%);
+
+    // ===========================================================================
+    // Typography
+    // ===========================================================================
+    --font-primary: "Open Sans", sans-serif;
+    --font-secondary: "PT Sans", sans-serif;
+
+    $font-size-values: (12, 16, 20, 24, 32, 48, 72);
+
+    @each $size in $font-size-values {
+        --fs-#{$size}: #{calc($size / 16)}rem;
+    }
+
+    $font-weight-values: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+
+    @each $weight in $font-weight-values {
+        --fw-#{$weight}: #{$weight};
+    }
+
+    $line-height-values: (
+        "none": 1,
+        "tight": 1.2,
+        "narrow": 1.4,
+        "spacious": 1.6,
+        "wide": 1.8,
+        "double": 2,
+    );
+
+    @each $key, $value in $line-height-values {
+        --lh-#{$key}: #{$value};
+    }
+
+    $letter-spacing-values: (1, 2, 3, 4, 5);
+
+    @each $value in $letter-spacing-values {
+        --ls-#{$value}: #{$value};
+    }
+
+    // ===========================================================================
+    // Spacing
+    // ===========================================================================
+    $spacing-values: (1, 4, 8, 12, 16, 20, 24, 32, 48, 64, 80, 96, 112, 128, 144, 160);
+
+    @each $value in $spacing-values {
+        --space-#{$value}: #{calc($value / 16)}rem;
+    }
+
+    // ===========================================================================
+    // Extras
+    // ===========================================================================
+    $border-radius-values: (3, 5, 10);
+
+    @each $value in $border-radius-values {
+        --border-radius-#{$value}: #{$value};
+    }
+
+    --border-radius-round: 100%;
+}
