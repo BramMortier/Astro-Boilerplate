@@ -16,6 +16,7 @@ button {
 // ===========================================================================
 h1,
 .typo-h1 {
+    font-size: var(--fs-72);
     font-family: var(--font-primary);
     font-weight: 700;
     line-height: var(--lh-none);
@@ -23,6 +24,7 @@ h1,
 
 h2,
 .typo-h2 {
+    font-size: var(--fs-48);
     font-family: var(--font-primary);
     font-weight: 700;
     line-height: var(--lh-none);
@@ -30,6 +32,7 @@ h2,
 
 h3,
 .typo-h3 {
+    font-size: var(--fs-32);
     font-family: var(--font-primary);
     font-weight: 600;
     line-height: var(--lh-none);
@@ -37,6 +40,7 @@ h3,
 
 h4,
 .typo-h4 {
+    font-size: var(--fs-24);
     font-family: var(--font-primary);
     font-weight: 600;
     line-height: var(--lh-none);
@@ -44,6 +48,7 @@ h4,
 
 h5,
 .typo-h5 {
+    font-size: var(--fs-20);
     font-family: var(--font-primary);
     font-weight: 600;
     line-height: var(--lh-none);
@@ -51,6 +56,7 @@ h5,
 
 h6,
 .typo-h6 {
+    font-size: var(--fs-16);
     font-family: var(--font-primary);
     font-weight: 600;
     line-height: var(--lh-none);

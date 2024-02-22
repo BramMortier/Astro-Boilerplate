@@ -3,6 +3,7 @@ import "../styles/index.scss";
 
 import Button from "@components/Button.astro";
 import Icon from "@components/Icon.astro";
+import Title from "@components/Title.astro";
 ---
 
 <html lang="en">
@@ -56,6 +57,15 @@ import Icon from "@components/Icon.astro";
                 <Icon name="chevron" size={20} rotation={180}/>
                 <Icon name="chevron" size={20} rotation={270}/>
             </div>
+
+            <div class="col">
+                <Title Tag="h1">This is an example heading 1</Title>
+                <Title Tag="h2">This is an example heading 2</Title>
+                <Title Tag="h3">This is an example heading 3</Title>
+                <Title Tag="h4">This is an example heading 4</Title>
+                <Title Tag="h5">This is an example heading 5</Title>
+                <Title Tag="h6">This is an example heading 6</Title>
+            </div>
         </main>
     </body>
 </html>
@@ -69,6 +79,10 @@ import Icon from "@components/Icon.astro";
         display: flex;
         gap: 1rem;
         margin-bottom: 1rem;
+
+        &.col {
+            flex-direction: column;
+        }
     }
 </style>
 
