@@ -1,0 +1,21 @@
+---
+import { HTMLAttributes } from "astro/types";
+import { Picture } from "astro:assets";
+
+interface Props extends HTMLAttributes<"picture"> {
+    src: ImageMetadata;
+    alt: string;
+}
+
+const { src, alt, ...props } = Astro.props
+
+---
+<Picture class:list={["c-image"]} src={src} alt={alt} {...props}/>
+
+<style scoped lang="scss">
+    .c-image {
+        width: auto;
+        height: 100%;
+        max-height: 300px;
+    }
+</style>
