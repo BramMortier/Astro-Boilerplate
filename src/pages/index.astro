@@ -2,6 +2,7 @@
 import "../styles/index.scss";
 
 import Button from "@components/Button.astro";
+import Icon from "@components/Icon.astro";
 ---
 
 <html lang="en">
@@ -13,15 +14,32 @@ import Button from "@components/Button.astro";
         <title>Astro</title>
     </head>
     <body>
-        <Button text="Primary button" />
-        <Button text="Secondary button" class="c-button--secondary" />
-        <Button text="Tertiary button" class="c-button--tertiary" />
+        <main>
+            <div>
+                <Button text="Primary button" />
+                <Button text="Secondary button" class="c-button--secondary" />
+                <Button text="Tertiary button" class="c-button--tertiary" />
+            </div>
+
+            <div>
+                <Icon name="arrow" size={20} />
+                <Icon name="arrow" size={20} rotation={90}/>
+                <Icon name="arrow" size={20} rotation={180}/>
+                <Icon name="arrow" size={20} rotation={270}/>
+            </div>
+        </main>
     </body>
 </html>
 
 <style scoped lang="scss">
-    body {
+    main {
         padding: var(--space-16);
+    }
+
+    div {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
 </style>
 
