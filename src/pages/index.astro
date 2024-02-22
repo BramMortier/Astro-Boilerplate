@@ -16,9 +16,33 @@ import Icon from "@components/Icon.astro";
     <body>
         <main>
             <div>
-                <Button text="Primary button" />
-                <Button text="Secondary button" class="c-button--secondary" />
-                <Button text="Tertiary button" class="c-button--tertiary" />
+                <Button>Primary button</Button>
+                <Button class="c-button--secondary">Secondary button</Button>
+                <Button class="c-button--secondary" disabled>Disabled</Button>
+                <Button class="c-button--tertiary">Tertiary button</Button>
+            </div>
+            
+            <div>
+                <Button>
+                    Next page
+                    <Icon name="arrow" />
+                </Button>
+
+                <Button class="c-button--secondary">
+                    Continue
+                    <Icon name="chevron" size={12} />
+                </Button>
+
+                <Button class="c-button--secondary" disabled>
+                    Send message
+                    <Icon name="arrow"/>
+                </Button>
+
+                <Button class="c-button--tertiary">
+                    <Icon name="chevron" rotation={180}  size={12}/>
+                    Navigate
+                    <Icon name="chevron"  size={12}/>
+                </Button>
             </div>
 
             <div>
@@ -26,6 +50,11 @@ import Icon from "@components/Icon.astro";
                 <Icon name="arrow" size={20} rotation={90}/>
                 <Icon name="arrow" size={20} rotation={180}/>
                 <Icon name="arrow" size={20} rotation={270}/>
+
+                <Icon name="chevron" size={20} />
+                <Icon name="chevron" size={20} rotation={90}/>
+                <Icon name="chevron" size={20} rotation={180}/>
+                <Icon name="chevron" size={20} rotation={270}/>
             </div>
         </main>
     </body>

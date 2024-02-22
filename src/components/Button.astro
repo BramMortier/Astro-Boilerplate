@@ -1,21 +1,27 @@
 ---
-interface Props {
-    text?: string;
+import { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<"button">  {
     class?: string;
 }
 
-const { text, class: className } = Astro.props;
+const { class: className, ...props } = Astro.props;
 ---
 
-<button class:list={["c-button", className]}>
-    {text}
+<button class:list={["c-button", className]} {...props}>
+    <slot />
 </button>
 
 <style scoped lang="scss">
     .c-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-12);
+
+        background-color: var(--clr-black);
         outline: none;
         border: 1px solid transparent;
-        background-color: var(--clr-black);
         color: var(--clr-white);
         padding-inline: var(--space-16);
         height: 2.5rem;
@@ -26,12 +32,20 @@ const { text, class: className } = Astro.props;
             border: 1px solid var(--clr-black);
             color: var(--clr-black);
         }
-
+        
         &--tertiary {
             background-color: transparent;
             color: var(--clr-black);
         }
+        
+        &:disabled {
+            opacity: 0.3;
 
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+        
         &:hover {
             cursor: pointer;
         }
