@@ -1,16 +1,74 @@
 ---
+import "../styles/index.scss";
 
+import Button from "@components/Button.astro";
+import Icon from "@components/Icon.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body>
+        <main>
+            <div>
+                <Button>Primary button</Button>
+                <Button class="c-button--secondary">Secondary button</Button>
+                <Button class="c-button--secondary" disabled>Disabled</Button>
+                <Button class="c-button--tertiary">Tertiary button</Button>
+            </div>
+            
+            <div>
+                <Button>
+                    Next page
+                    <Icon name="arrow" />
+                </Button>
+
+                <Button class="c-button--secondary">
+                    Continue
+                    <Icon name="chevron" size={12} />
+                </Button>
+
+                <Button class="c-button--secondary" disabled>
+                    Send message
+                    <Icon name="arrow"/>
+                </Button>
+
+                <Button class="c-button--tertiary">
+                    <Icon name="chevron" rotation={180}  size={12}/>
+                    Navigate
+                    <Icon name="chevron"  size={12}/>
+                </Button>
+            </div>
+
+            <div>
+                <Icon name="arrow" size={20} />
+                <Icon name="arrow" size={20} rotation={90}/>
+                <Icon name="arrow" size={20} rotation={180}/>
+                <Icon name="arrow" size={20} rotation={270}/>
+
+                <Icon name="chevron" size={20} />
+                <Icon name="chevron" size={20} rotation={90}/>
+                <Icon name="chevron" size={20} rotation={180}/>
+                <Icon name="chevron" size={20} rotation={270}/>
+            </div>
+        </main>
+    </body>
 </html>
+
+<style scoped lang="scss">
+    main {
+        padding: var(--space-16);
+    }
+
+    div {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+</style>
+
