@@ -73,9 +73,21 @@ import example3 from "@assets/images/example-3.png";
             </div>
 
             <div>
-                <Img src={example1} alt="This is the first example image"/>
-                <Img src={example2} alt="This is the second example image"/>
-                <Img src={example3} alt="This is the third example image"/>
+                <Img 
+                    src={example1} 
+                    alt="This is the first example image" 
+                    sizes={`(max-width: 768px) 100vw, 33vw`}
+                />
+                <Img 
+                    src={example2} 
+                    alt="This is the second example image" 
+                    sizes={`(max-width: 768px) 100vw, 33vw`}
+                />
+                <Img 
+                    src={example3} 
+                    alt="This is the third example image" 
+                    sizes={`(max-width: 768px) 100vw, 33vw`}
+                />
             </div>
         </main>
     </body>
