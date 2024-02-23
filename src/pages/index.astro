@@ -4,6 +4,13 @@ import "../styles/index.scss";
 import Button from "@components/Button.astro";
 import Icon from "@components/Icon.astro";
 import Title from "@components/Title.astro";
+import Img from "@components/Img.astro";
+
+import example1 from "@assets/images/1-1-example.png";
+import example2 from "@assets/images/16-9-example.png";
+import example3 from "@assets/images/9-16-example.png";
+import example4 from "@assets/images/4-5-example.png";
+import example5 from "@assets/images/5-4-example.png";
 ---
 
 <html lang="en">
@@ -65,6 +72,34 @@ import Title from "@components/Title.astro";
                 <Title Tag="h4" text="This is an example heading 4"/>
                 <Title Tag="h5" text="This is an example heading 5"/>
                 <Title Tag="h6" text="This is an example heading 6"/>
+            </div>
+
+            <div>
+                <Img 
+                    src={example1} 
+                    alt="This is the first example image" 
+                    sizes={`(max-width: 768px) 100vw, 33vw`}
+                />
+                <Img 
+                    src={example2} 
+                    alt="This is the second example image" 
+                    sizes={`(max-width: 768px) 100vw, 33vw`}
+                />
+                <Img 
+                    src={example3} 
+                    alt="This is the third example image" 
+                    sizes={`(max-width: 768px) 100vw, 33vw`}
+                />
+                <Img 
+                    src={example4} 
+                    alt="This is the third example image" 
+                    sizes={`(max-width: 768px) 100vw, 33vw`}
+                />
+                <Img 
+                    src={example5} 
+                    alt="This is the third example image" 
+                    sizes={`(max-width: 768px) 100vw, 33vw`}
+                />
             </div>
         </main>
     </body>
