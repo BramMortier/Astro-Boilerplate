@@ -1,0 +1,73 @@
+---
+const colorPalette = [
+    [
+      { name: "--clr-primary-300", value: "#48cae4" },
+      { name: "--clr-primary-500", value: "#00b4d8" },
+      { name: "--clr-primary-700", value: "#0096c7" },
+      { name: "--clr-primary-900", value: "#0077b6" }
+    ],
+    [
+      { name: "--clr-secondary-100", value: "#88d4ab" },
+      { name: "--clr-secondary-300", value: "#78c6a3" },
+      { name: "--clr-secondary-500", value: "#67b99a" },
+      { name: "--clr-secondary-700", value: "#56ab91" },
+      { name: "--clr-secondary-900", value: "#469d89" },
+    ],
+    [
+      { name: "--clr-black", value: "hsl(0, 0%, 0%)" },
+      { name: "--clr-white", value: "hsl(0, 0%, 100%)" },
+    ],
+    [
+      { name: "--clr-grey-900", value: "hsl(0, 0%, 10%)" },
+      { name: "--clr-grey-800", value: "hsl(0, 0%, 20%)" },
+      { name: "--clr-grey-700", value: "hsl(0, 0%, 30%)" },
+      { name: "--clr-grey-600", value: "hsl(0, 0%, 40%)" },
+      { name: "--clr-grey-500", value: "hsl(0, 0%, 50%)" },
+      { name: "--clr-grey-400", value: "hsl(0, 0%, 60%)" },
+      { name: "--clr-grey-300", value: "hsl(0, 0%, 70%)" },
+      { name: "--clr-grey-200", value: "hsl(0, 0%, 80%)" },
+      { name: "--clr-grey-100", value: "hsl(0, 0%, 90%)" }
+    ],
+];
+---
+
+<section class="playground-colors">
+    {colorPalette.map(group => (
+        <div class="playground-colors__group">
+            {group.map(color => (
+                <div 
+                    class="playground-colors__group-swatch" 
+                    style={{ 
+                        backgroundColor: color.value, 
+                        border: color.value === "hsl(0, 0%, 100%)" ? 
+                            "1px solid var(--clr-grey-200)" : "none" 
+                    }}
+                ></div>
+            ))}
+        </div>
+    ))}
+</section>
+
+<style scoped lang="scss">
+    .playground-colors {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+
+        margin: var(--space-24);
+        padding: var(--space-24);
+        border: 1px solid var(--clr-grey-200);
+
+        &__group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-8);
+        }
+
+        &__group-swatch {
+            min-width: 80px;
+            height: 80px;
+            flex-grow: 1;
+        }
+    }
+</style>
