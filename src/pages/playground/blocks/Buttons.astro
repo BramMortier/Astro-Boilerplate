@@ -1,37 +1,37 @@
 ---
-import Button from "@components/Button.astro";
-import Icon from "@components/Icon.astro";
+import BaseButton from "@components/BaseButton.astro";
+import BaseIcon from "@components/BaseIcon.astro";
 ---
 
 <section class="playground-buttons">
     <div class="playground-buttons__basic">
-        <Button>Primary button</Button>
-        <Button class="c-button--secondary">Secondary button</Button>
-        <Button class="c-button--secondary" disabled>Disabled</Button>
-        <Button class="c-button--tertiary">Tertiary button</Button>
+        <BaseButton>Primary button</BaseButton>
+        <BaseButton class="c-button--secondary">Secondary button</BaseButton>
+        <BaseButton class="c-button--secondary" disabled>Disabled</BaseButton>
+        <BaseButton class="c-button--tertiary">Tertiary button</BaseButton>
     </div>
 
     <div class="playground-buttons__complex">
-        <Button>
+        <BaseButton>
             Next page
-            <Icon name="arrow" />
-        </Button>
+            <BaseIcon name="arrow" />
+        </BaseButton>
 
-        <Button class="c-button--secondary">
+        <BaseButton class="c-button--secondary">
             Continue
-            <Icon name="chevron" size={12} />
-        </Button>
+            <BaseIcon name="chevron" size={12} />
+        </BaseButton>
 
-        <Button class="c-button--secondary" disabled>
+        <BaseButton class="c-button--secondary" disabled>
             Send message
-            <Icon name="arrow"/>
-        </Button>
+            <BaseIcon name="arrow"/>
+        </BaseButton>
 
-        <Button class="c-button--tertiary">
-            <Icon name="chevron" rotation={180}  size={12}/>
+        <BaseButton class="c-button--tertiary">
+            <BaseIcon name="chevron" rotation={180}  size={12}/>
             Navigate
-            <Icon name="chevron"  size={12}/>
-        </Button>
+            <BaseIcon name="chevron"  size={12}/>
+        </BaseButton>
     </div>
 </section>
 
