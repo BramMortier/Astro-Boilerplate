@@ -1,0 +1,22 @@
+---
+import BaseNumber from "@components/BaseNumber.astro";
+---
+
+<section class="playground-numbers">
+    <BaseNumber number="10.000" label="tons"/>
+    <BaseNumber number="478.000" label="inhabitants"/>
+    <BaseNumber number="800" label="participants"/>
+    <BaseNumber number="1.987" label="eur"/>
+</section>
+
+<style scoped lang="scss">
+    .playground-numbers {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+
+        margin: var(--space-24);
+        padding: var(--space-24);
+        border: 1px solid var(--clr-grey-200);
+    }
+</style>

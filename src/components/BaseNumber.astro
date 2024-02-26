@@ -1,0 +1,23 @@
+---
+interface Props {
+    number: string;
+    label?: string;
+    prefix?: string;
+    class?: string;
+}
+
+const { number, label, prefix, class: className } = Astro.props;
+---
+
+<div class:list={["c-number", className]}>
+    {prefix && <span class="c-number__prefix">{prefix}</span>}
+    <p class="c-number__number typo-h2">{number}</p>
+    {label && <p class="c-number__label typo-label">{label}</p>}
+</div>
+
+<style scoped lang="scss">
+    .c-number {
+        display: flex;
+        gap: var(--space-8);
+    }
+</style>

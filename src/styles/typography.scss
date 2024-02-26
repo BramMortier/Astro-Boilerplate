@@ -80,3 +80,9 @@ i,
     font-style: italic;
     line-height: var(--lh-spacious);
 }
+
+.typo-label {
+    font-size: var(--fs-20);
+    font-weight: var(--fw-500);
+    text-transform: uppercase;
+}
