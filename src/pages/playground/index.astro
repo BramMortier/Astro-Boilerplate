@@ -1,5 +1,10 @@
 ---
-import "../styles/index.scss";
+import "@styles/index.scss";
+
+import Buttons from "@playground/blocks/Buttons.astro"
+import Typography from "@playground/blocks/Typography.astro"
+import Icons from "@playground/blocks/Icons.astro"
+import Media from "@playground/blocks/Media.astro"
 ---
 
 <html lang="en">
@@ -12,24 +17,10 @@ import "../styles/index.scss";
     </head>
     <body>
         <main>
-
+            <Buttons />
+            <Icons />
+            <Typography />
+            <Media />
         </main>
     </body>
 </html>
-
-<style scoped lang="scss">
-    main {
-        padding: var(--space-16);
-    }
-
-    div {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1rem;
-
-        &.col {
-            flex-direction: column;
-        }
-    }
-</style>
-

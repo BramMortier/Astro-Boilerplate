@@ -25,7 +25,8 @@ const { src, alt, sizes, class: className, ...props } = Astro.props
 <style scoped lang="scss">
     .c-image {
         width: 100%;
-        height: auto;
+        height: 100%;
+        max-height: 300px;
 
         &--cover {
             object-fit: cover;

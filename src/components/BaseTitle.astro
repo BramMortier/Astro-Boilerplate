@@ -1,9 +1,10 @@
 ---
 interface Props  {
-    Tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    Tag: string;
     text: string;
     class?: string;
 }
+
 const { Tag, text, class: className } = Astro.props
 ---
 
