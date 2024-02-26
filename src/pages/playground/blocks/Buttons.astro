@@ -1,0 +1,53 @@
+---
+import Button from "@components/Button.astro";
+import Icon from "@components/Icon.astro";
+---
+
+<section class="playground-buttons">
+    <div class="playground-buttons__basic">
+        <Button>Primary button</Button>
+        <Button class="c-button--secondary">Secondary button</Button>
+        <Button class="c-button--secondary" disabled>Disabled</Button>
+        <Button class="c-button--tertiary">Tertiary button</Button>
+    </div>
+
+    <div class="playground-buttons__complex">
+        <Button>
+            Next page
+            <Icon name="arrow" />
+        </Button>
+
+        <Button class="c-button--secondary">
+            Continue
+            <Icon name="chevron" size={12} />
+        </Button>
+
+        <Button class="c-button--secondary" disabled>
+            Send message
+            <Icon name="arrow"/>
+        </Button>
+
+        <Button class="c-button--tertiary">
+            <Icon name="chevron" rotation={180}  size={12}/>
+            Navigate
+            <Icon name="chevron"  size={12}/>
+        </Button>
+    </div>
+</section>
+
+<style scoped lang="scss">
+    .playground-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+
+        margin: var(--space-24);
+        padding: var(--space-24);
+        border: 1px solid var(--clr-grey-200);
+        
+        &__basic, &__complex {
+            display: flex;
+            gap: var(--space-16);
+        }
+    }
+</style>

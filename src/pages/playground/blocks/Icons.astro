@@ -1,0 +1,36 @@
+---
+import Icon from "@components/Icon.astro";
+---
+
+<section class="playground-icons">
+    <div class="playground-icons__group">
+        <Icon name="arrow" size={20} />
+        <Icon name="arrow" size={20} rotation={90}/>
+        <Icon name="arrow" size={20} rotation={180}/>
+        <Icon name="arrow" size={20} rotation={270}/>
+    </div>
+
+    <div class="playground-icons__group">
+        <Icon name="chevron" size={20} />
+        <Icon name="chevron" size={20} rotation={90}/>
+        <Icon name="chevron" size={20} rotation={180}/>
+        <Icon name="chevron" size={20} rotation={270}/> 
+    </div>
+</section>
+
+<style scoped lang="scss">
+    .playground-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-48);
+
+        margin: var(--space-24);
+        padding: var(--space-24);
+        border: 1px solid var(--clr-grey-200);
+        
+        &__group {
+            display: flex;
+            gap: var(--space-16);
+        }
+    }
+</style>

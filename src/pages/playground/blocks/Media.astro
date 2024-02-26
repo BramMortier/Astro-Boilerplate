@@ -1,0 +1,63 @@
+---
+import Img from "@components/Img.astro";
+
+import example1 from "@assets/images/1-1-example.png";
+import example2 from "@assets/images/16-9-example.png";
+import example3 from "@assets/images/9-16-example.png";
+import example4 from "@assets/images/4-5-example.png";
+import example5 from "@assets/images/5-4-example.png";
+---
+
+<section class="playground-media">
+    <div class="playground-media__images">
+        <Img 
+            src={example1}
+            class="c-image--cover"
+            alt="This is the first example image" 
+            sizes={`(max-width: 768px) 100vw, 33vw`}
+        />
+        <Img 
+            src={example2}
+            class="c-image--cover"
+            alt="This is the second example image" 
+            sizes={`(max-width: 768px) 100vw, 33vw`}
+        />
+        <Img 
+            src={example3}
+            class="c-image--cover"
+            alt="This is the third example image" 
+            sizes={`(max-width: 768px) 100vw, 33vw`}
+        />
+        <Img 
+            src={example4}
+            class="c-image--cover"
+            alt="This is the third example image" 
+            sizes={`(max-width: 768px) 100vw, 33vw`}
+        />
+        <Img 
+            src={example5}
+            class="c-image--cover"
+            alt="This is the third example image" 
+            sizes={`(max-width: 768px) 100vw, 33vw`}
+        />
+    </div>
+</section>
+
+<style scoped lang="scss">
+    .playground-media {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+
+        margin: var(--space-24);
+        padding: var(--space-24);
+        border: 1px solid var(--clr-grey-200);
+        
+        &__images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-24);
+        }
+    }
+</style>
+
