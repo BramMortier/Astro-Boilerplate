@@ -6,23 +6,27 @@ const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
 ---
 
 <section class="playground-typography">
-    <div class="playground-typography__headings">
-        {headings.map((heading, index) => (
-            <BaseTitle Tag={heading} text={`This is an example heading ${index + 1}`} />
-        ))}
-    </div>
+    <BaseTitle text="Font & Typography" Tag="h4" />
 
-    <div class="playground-typography__divider"></div>
-
-    <div class="playground-typography__text">
-        <BaseText class="typo-p--large" text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, possimus pariatur maiores repellat commodi esse, atque ad delectus, perspiciatis similique facere voluptas. Nostrum, voluptate inventore quia assumenda pariatur perferendis ab sunt dolorem commodi voluptatibus, et atque nam reiciendis porro consequatur laudantium hic labore officiis iste dolorum harum ipsum. Sequi, modi."/>
-
-        <div>
-            <BaseText text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempore aperiam libero deserunt iste odio aspernatur, nostrum pariatur, quos, molestias corrupti voluptatum deleniti dignissimos. Neque dolores excepturi provident enim quis quasi a voluptas tempora praesentium, reiciendis cupiditate temporibus officiis beatae!"/>
-            
-            <BaseText Tag="i" text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos similique tempora earum commodi fugit quis beatae, asperiores et illo laboriosam expedita tempore dolorem amet sunt nam adipisci a sit incidunt ut distinctio delectus unde maiores! Dolorum odio molestiae fuga repellendus."/>
-
-            <BaseText Tag="strong" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, natus autem ducimus dicta repellendus officia laudantium quo pariatur nostrum, perspiciatis deleniti distinctio inventore. Incidunt natus, architecto obcaecati iure temporibus repellendus. Accusamus quia perferendis excepturi nobis consequatur non nulla libero obcaecati."/>
+    <div class="playground-typography__content">
+        <div class="playground-typography__headings">
+            {headings.map((heading, index) => (
+                <BaseTitle Tag={heading} text={`This is an example heading ${index + 1}`} />
+            ))}
+        </div>
+    
+        <div class="playground-typography__divider"></div>
+    
+        <div class="playground-typography__text">
+            <BaseText class="typo-p--large" text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, possimus pariatur maiores repellat commodi esse, atque ad delectus, perspiciatis similique facere voluptas. Nostrum, voluptate inventore quia assumenda pariatur perferendis ab sunt dolorem commodi voluptatibus, et atque nam reiciendis porro consequatur laudantium hic labore officiis iste dolorum harum ipsum. Sequi, modi."/>
+    
+            <div>
+                <BaseText text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempore aperiam libero deserunt iste odio aspernatur, nostrum pariatur, quos, molestias corrupti voluptatum deleniti dignissimos. Neque dolores excepturi provident enim quis quasi a voluptas tempora praesentium, reiciendis cupiditate temporibus officiis beatae!"/>
+                
+                <BaseText Tag="i" text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos similique tempora earum commodi fugit quis beatae, asperiores et illo laboriosam expedita tempore dolorem amet sunt nam adipisci a sit incidunt ut distinctio delectus unde maiores! Dolorum odio molestiae fuga repellendus."/>
+    
+                <BaseText Tag="strong" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, natus autem ducimus dicta repellendus officia laudantium quo pariatur nostrum, perspiciatis deleniti distinctio inventore. Incidunt natus, architecto obcaecati iure temporibus repellendus. Accusamus quia perferendis excepturi nobis consequatur non nulla libero obcaecati."/>
+            </div>
         </div>
     </div>
 </section>
@@ -31,11 +35,16 @@ const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
     .playground-typography {
         display: flex;
         flex-direction: column;
-        gap: var(--space-32);
-        
+        gap: var(--space-8);
         margin: var(--space-24);
-        padding: var(--space-24);
-        border: 1px solid var(--clr-grey-200);
+        
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-24);
+            padding: var(--space-24);
+            border: 1px solid var(--clr-grey-200);
+        }
         
         &__headings {
             display: flex;

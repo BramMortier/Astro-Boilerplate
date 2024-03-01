@@ -1,37 +1,42 @@
 ---
 import BaseButton from "@components/BaseButton.astro";
 import BaseIcon from "@components/BaseIcon.astro";
+import BaseTitle from "@components/BaseTitle.astro";
 ---
 
 <section class="playground-buttons">
-    <div class="playground-buttons__basic">
-        <BaseButton>Primary button</BaseButton>
-        <BaseButton class="c-button--secondary">Secondary button</BaseButton>
-        <BaseButton class="c-button--secondary" disabled>Disabled</BaseButton>
-        <BaseButton class="c-button--tertiary">Tertiary button</BaseButton>
-    </div>
+    <BaseTitle text="Buttons" Tag="h4"/>
 
-    <div class="playground-buttons__complex">
-        <BaseButton>
-            Next page
-            <BaseIcon name="arrow" />
-        </BaseButton>
-
-        <BaseButton class="c-button--secondary">
-            Continue
-            <BaseIcon name="chevron" size={12} />
-        </BaseButton>
-
-        <BaseButton class="c-button--secondary" disabled>
-            Send message
-            <BaseIcon name="arrow"/>
-        </BaseButton>
-
-        <BaseButton class="c-button--tertiary">
-            <BaseIcon name="chevron" rotation={180}  size={12}/>
-            Navigate
-            <BaseIcon name="chevron"  size={12}/>
-        </BaseButton>
+    <div class="playground-buttons__content">
+        <div class="playground-buttons__basic">
+            <BaseButton>Primary button</BaseButton>
+            <BaseButton class="c-button--secondary">Secondary button</BaseButton>
+            <BaseButton class="c-button--secondary" disabled>Disabled</BaseButton>
+            <BaseButton class="c-button--tertiary">Tertiary button</BaseButton>
+        </div>
+    
+        <div class="playground-buttons__complex">
+            <BaseButton>
+                Next page
+                <BaseIcon name="arrow" />
+            </BaseButton>
+    
+            <BaseButton class="c-button--secondary">
+                Continue
+                <BaseIcon name="chevron" size={12} />
+            </BaseButton>
+    
+            <BaseButton class="c-button--secondary" disabled>
+                Send message
+                <BaseIcon name="arrow"/>
+            </BaseButton>
+    
+            <BaseButton class="c-button--tertiary">
+                <BaseIcon name="chevron" rotation={180}  size={12}/>
+                Navigate
+                <BaseIcon name="chevron"  size={12}/>
+            </BaseButton>
+        </div>
     </div>
 </section>
 
@@ -39,11 +44,17 @@ import BaseIcon from "@components/BaseIcon.astro";
     .playground-buttons {
         display: flex;
         flex-direction: column;
-        gap: var(--space-16);
-
+        gap: var(--space-8);
         margin: var(--space-24);
-        padding: var(--space-24);
-        border: 1px solid var(--clr-grey-200);
+
+        
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-16);
+            padding: var(--space-24);
+            border: 1px solid var(--clr-grey-200);
+        }
         
         &__basic, &__complex {
             display: flex;

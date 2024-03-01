@@ -1,4 +1,6 @@
 ---
+import BaseTitle from "@components/BaseTitle.astro";
+
 const colorPalette = [
     [
       { name: "--clr-black", value: "hsl(0, 0%, 0%)" },
@@ -19,31 +21,40 @@ const colorPalette = [
 ---
 
 <section class="playground-colors">
-    {colorPalette.map(group => (
-        <div class="playground-colors__group">
-            {group.map(color => (
-                <div 
-                    class="playground-colors__group-swatch" 
-                    style={{ 
-                        backgroundColor: color.value, 
-                        border: color.value === "hsl(0, 0%, 100%)" ? 
-                            "1px solid var(--clr-grey-200)" : "none" 
-                    }}
-                ></div>
-            ))}
-        </div>
-    ))}
+    <BaseTitle text="Color palette" Tag="h4"/>
+    
+    <div class="playground-colors__content">
+        {colorPalette.map(group => (
+            <div class="playground-colors__group">
+                {group.map(color => (
+                    <div 
+                        class="playground-colors__group-swatch" 
+                        style={{ 
+                            backgroundColor: color.value, 
+                            border: color.value === "hsl(0, 0%, 100%)" ? 
+                                "1px solid var(--clr-grey-200)" : "none" 
+                        }}
+                    ></div>
+                ))}
+            </div>
+        ))}
+    </div>
 </section>
 
 <style scoped lang="scss">
     .playground-colors {
         display: flex;
-        flex-direction: column;
         gap: var(--space-8);
-
+        flex-direction: column;
         margin: var(--space-24);
-        padding: var(--space-24);
-        border: 1px solid var(--clr-grey-200);
+        
+        &__content {
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-24);
+            gap: var(--space-8);
+            border: 1px solid var(--clr-grey-200);
+        }
 
         &__group {
             display: flex;
