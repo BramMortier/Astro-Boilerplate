@@ -20,7 +20,11 @@ const {
 } = Astro.props;
 ---
 
-<article class:list={["c-split", className]}>
+<article class:list={[
+        "c-split", 
+        { "c-split--reversed": position === "reversed" },
+        className
+    ]}>
     <div class="c-split__left">
         {title && <BaseTitle Tag="h4" text={title}/>}
         <BaseText text={text}/>
@@ -38,21 +42,26 @@ const {
 
 <style scoped lang="scss">
     .c-split {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
         gap: var(--space-32);
         padding: var(--space-16);
         border: 1px solid var(--clr-black);
         max-width: 50rem;
 
+        &--reversed {
+            flex-direction: row-reverse;
+        }
+
         &__left {
+            width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             gap: var(--space-16);
         }
-
+        
         &__right {
+            width: 50%;
             display: flex;
             align-items: center;
         }
