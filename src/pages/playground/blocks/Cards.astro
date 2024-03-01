@@ -1,4 +1,7 @@
 ---
+import BaseSplit from "@components/BaseSplit.astro";
+import BaseButton from "@components/BaseButton.astro";
+import BaseIcon from "@components/BaseIcon.astro";
 import BaseCard from "@components/BaseCard.astro";
 
 import cardImage from "@assets/images/5-4-example.png";
@@ -38,22 +41,43 @@ import cardImage from "@assets/images/5-4-example.png";
             image={cardImage}
         />
     </div>
+
+    <BaseSplit 
+        title="This is a split" 
+        text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus error tempora voluptas optio voluptatum quisquam nam, explicabo perspiciatis unde consectetur dolorum eveniet, laborum maxime suscipit rem voluptates sequi, facere asperiores."
+        image={cardImage}
+    >
+        <BaseButton slot="cta">
+            Get to know us
+            <BaseIcon name="chevron" size={12} />
+        </BaseButton>
+        <BaseButton slot="cta" class="c-button--secondary">
+            See more cases
+            <BaseIcon name="chevron" size={12}/>
+        </BaseButton>
+    </BaseSplit>
+    
+    <BaseSplit
+        position="reversed"
+        text="Possimus error tempora voluptas optio voluptatum quisquam nam, explicabo perspiciatis unde consectetur dolorum eveniet, laborum maxime suscipit rem voluptates sequi, facere asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo id qui illum repellendus a praesentium culpa beatae impedit obcaecati vitae."
+        image={cardImage}
+    >
+        <BaseButton slot="cta">Discover our options</BaseButton>
+    </BaseSplit>
 </section>
 
 <style scoped lang="scss">
     .playground-cards {
         display: flex;
-        flex-direction: column;
-        gap: var(--space-48);
-        
+        flex-wrap: wrap;
+        gap: var(--space-16);
+
         margin: var(--space-24);
         padding: var(--space-24);
         border: 1px solid var(--clr-grey-200);
         
         &__basic, &__complex {
             display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-32);
+            gap: var(--space-16);
         }
     }
-</style>
