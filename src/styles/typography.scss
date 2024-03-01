@@ -30,7 +30,7 @@ h4,
     font-size: var(--fs-24);
     font-family: var(--font-primary);
     font-weight: 600;
-    line-height: var(--lh-none);
+    line-height: var(--lh-spacious);
 }
 
 h5,
@@ -79,4 +79,10 @@ i,
     font-weight: var(--fw-400);
     font-style: italic;
     line-height: var(--lh-spacious);
+}
+
+.typo-label {
+    font-size: var(--fs-20);
+    font-weight: var(--fw-500);
+    text-transform: uppercase;
 }
