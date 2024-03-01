@@ -7,7 +7,7 @@ import BaseButton from "@components/BaseButton.astro";
 interface Props {
     image?: ImageMetadata;
     title?: string;
-    text: string;
+    text?: string;
     button?: any;
 }
 
@@ -19,7 +19,7 @@ const { title, text, button, image } = Astro.props;
 
     {title && <BaseTitle text={title} Tag="h4"/>}
 
-    <BaseText text={text}/>
+    {text && <BaseText text={text}/>}
     
     {button && <BaseButton>{button.text}</BaseButton>}
 </article>
