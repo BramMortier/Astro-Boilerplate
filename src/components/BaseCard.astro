@@ -1,0 +1,38 @@
+---
+import BaseImage from "@components/BaseImage.astro";
+import BaseTitle from "@components/BaseTitle.astro";
+import BaseText from "@components/BaseText.astro";
+import BaseButton from "@components/BaseButton.astro";
+
+interface Props {
+    image?: ImageMetadata;
+    title?: string;
+    text: string;
+    button?: any;
+}
+
+const { title, text, button, image } = Astro.props;
+---
+
+<article class="c-card">
+    {image && <BaseImage src={image} alt="alt text" sizes={`(max-width: 768px) 100vw, 33vw`}/>}
+
+    {title && <BaseTitle text={title} Tag="h4"/>}
+
+    <BaseText text={text}/>
+    
+    {button && <BaseButton>{button.text}</BaseButton>}
+</article>
+
+<style scoped lang="scss">
+    .c-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+
+        border: 1px solid var(--clr-black);
+        padding: var(--space-16);
+        max-width: 350px;
+        height: fit-content;
+    }
+</style>

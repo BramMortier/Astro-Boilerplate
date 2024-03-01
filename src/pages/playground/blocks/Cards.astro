@@ -1,0 +1,48 @@
+---
+import BaseCard from "@components/BaseCard.astro";
+
+import cardImage from "@assets/images/5-4-example.png";
+---
+
+<section class="playground-cards">
+    <div class="playground-cards__basic">
+        <BaseCard 
+            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+            button={{ text: "button" }}
+            image={cardImage}
+        />
+        <BaseCard 
+            title="Test" 
+            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+            button={{ text: "button" }}
+            image={cardImage}
+        />
+        <BaseCard 
+            title="Test" 
+            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+            button={{ text: "button" }}
+            image={cardImage}
+        />
+    </div>
+
+    <div class="playground-cards__complex">
+       
+    </div>
+</section>
+
+<style scoped lang="scss">
+    .playground-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-48);
+
+        margin: var(--space-24);
+        padding: var(--space-24);
+        border: 1px solid var(--clr-grey-200);
+
+        &__basic, &__complex {
+            display: flex;
+            gap: var(--space-32);
+        }
+    }
+</style>
