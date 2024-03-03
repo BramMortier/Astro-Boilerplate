@@ -1,0 +1,46 @@
+---
+const playgroundBlocks = ["Buttons", "Cards", "Colors", "Icons", "Typography", "Media", "Numbers"]
+---
+
+<section class="playground-filters">
+    {playgroundBlocks.map(block => (
+        <p>
+            {block}
+        </p>        
+    ))}
+</section>
+
+<style scoped lang="scss">
+    .playground-filters {
+        display: flex;
+        gap: var(--space-16);
+        flex-wrap: wrap;
+        margin: var(--space-24);
+
+        p {
+            padding: var(--space-12) var(--space-24);
+            min-width: 12.5rem;
+            width: 100%;
+            border: 1px solid var(--clr-grey-200);
+        }
+    }
+</style>
+
+<script>
+    const playgroundBlockElements = [];
+    const visibleItems = [];
+
+    const updateFilter = () => {
+
+    }
+
+    const renderBlocks = () => {
+        playgroundBlockElements.forEach(block => {
+            if (visibleItems.includes(block)) {
+                block.classList.remove("invisible");
+            } else {
+                block.classList.add("invisible");
+            }
+        })        
+    }
+</script>

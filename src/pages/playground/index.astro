@@ -1,6 +1,8 @@
 ---
 import "@styles/index.scss";
 
+import Filters from "@playground/blocks/Filters.astro";
+
 import Buttons from "@playground/blocks/Buttons.astro"
 import Typography from "@playground/blocks/Typography.astro"
 import Icons from "@playground/blocks/Icons.astro"
@@ -28,5 +30,16 @@ import Cards from "@playground/blocks/Cards.astro"
             <Media />
             <Cards />
         </main>
+
+        <aside>
+            <Filters />
+        </aside>
     </body>
 </html>
+
+<style scoped lang="scss">
+    body {
+        display: grid;
+        grid-template-columns: 1fr 25rem;
+    }
+</style>
