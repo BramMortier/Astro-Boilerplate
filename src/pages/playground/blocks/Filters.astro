@@ -1,28 +1,30 @@
 ---
-const playgroundBlocks = ["Buttons", "Cards", "Colors", "Icons", "Typography", "Media", "Numbers"]
+import BaseImage from "@components/BaseImage.astro";
+
+import buttons from "@assets/images/playground/buttons.png";
+
+const playgroundBlocks = ["buttons", "cards", "colors", "icons", "typography", "media", "numbers"]
 ---
 
 <section class="playground-filters">
     {playgroundBlocks.map(block => (
-        <p>
-            {block}
-        </p>        
+        <div class="playground-filters__option">
+            <BaseImage
+                src={buttons}
+                class="c-image--cover"
+                alt="This is the first example image" 
+                sizes={`(max-width: 768px) 100vw, 33vw`}
+            />
+        </div>   
     ))}
 </section>
 
 <style scoped lang="scss">
     .playground-filters {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: var(--space-16);
-        flex-wrap: wrap;
         margin: var(--space-24);
-
-        p {
-            padding: var(--space-12) var(--space-24);
-            min-width: 12.5rem;
-            width: 100%;
-            border: 1px solid var(--clr-grey-200);
-        }
     }
 </style>
 

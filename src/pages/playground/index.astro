@@ -41,5 +41,14 @@ import Cards from "@playground/blocks/Cards.astro"
     body {
         display: grid;
         grid-template-columns: 1fr 25rem;
+
+        main {
+            height: 100vh;
+            overflow: scroll;
+        }
+    }
+
+    aside {
+        border-left: 1px solid var(--clr-grey-200);
     }
 </style>
