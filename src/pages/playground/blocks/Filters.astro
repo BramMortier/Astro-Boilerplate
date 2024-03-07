@@ -1,6 +1,7 @@
 ---
 import BaseImage from "@components/BaseImage.astro";
 import BaseTitle from "@components/BaseTitle.astro";
+import BaseText from "@components/BaseText.astro";
 
 import buttons from "@assets/images/playground/buttons.png";
 import typography from "@assets/images/playground/typography.png";
@@ -17,7 +18,22 @@ import colors from "@assets/images/playground/colors.png";
 import inputs from "@assets/images/playground/inputs.png";
 import checkboxes from "@assets/images/playground/checkboxes.png";
 
-const playgroundBlocks = [colors, buttons, links, navigation, icons, typography, numbers, media, cards, splits, cta, dropdownMenus, inputs, checkboxes];
+const playgroundBlocks = [
+    { graphic: colors, name: "Colors" },
+    { graphic: buttons, name: "Buttons" }, 
+    { graphic: links, name: "Links" }, 
+    { graphic: navigation, name: "Navigation" }, 
+    { graphic: icons, name: "Icons" }, 
+    { graphic: typography, name: "Typography" }, 
+    { graphic: numbers, name: "Numbers" }, 
+    { graphic: media, name: "Media" }, 
+    { graphic: cards, name: "Cards" }, 
+    { graphic: splits, name: "Splits" }, 
+    { graphic: cta, name: "Call To Actions" }, 
+    { graphic: dropdownMenus, name: "Dropdown Menus" }, 
+    { graphic: inputs, name: "Inputs" }, 
+    { graphic: checkboxes, name: "Checkboxes" }
+];
 ---
 
 <section class="playground-filters">
@@ -27,11 +43,13 @@ const playgroundBlocks = [colors, buttons, links, navigation, icons, typography,
         {playgroundBlocks.map(block => (
             <div class="playground-filters__option">
                 <BaseImage
-                    src={block}
+                    src={block.graphic}
                     class="c-image--cover"
                     alt="This is the first example image" 
                     sizes={`(max-width: 768px) 100vw, 33vw`}
                 />
+
+                <BaseText text={block.name} />
             </div>   
         ))}
     </div>
@@ -41,7 +59,7 @@ const playgroundBlocks = [colors, buttons, links, navigation, icons, typography,
     .playground-filters {
         display: flex;
         flex-direction: column;
-        gap: var(--space-8);
+        gap: var(--space-16);
         margin: var(--space-24);
 
         &__options {
@@ -52,6 +70,9 @@ const playgroundBlocks = [colors, buttons, links, navigation, icons, typography,
         
         &__option {
             transition: all ease 0.15s;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
 
             &:hover {
                 filter: brightness(95%);

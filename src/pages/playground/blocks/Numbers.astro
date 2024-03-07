@@ -27,14 +27,14 @@ import BaseTitle from "@components/BaseTitle.astro";
     .playground-numbers {
         display: flex;
         flex-direction: column;
-        gap: var(--space-8);
+        gap: var(--space-16);
         margin: var(--space-24);
+        padding: var(--space-16) var(--space-24) var(--space-24);
+        border: 1px solid var(--clr-grey-200);
         
         &__content {
             display: flex;
             gap: var(--space-96);
-            padding: var(--space-24);
-            border: 1px solid var(--clr-grey-200);
         }
 
         &__basic, &__complex {

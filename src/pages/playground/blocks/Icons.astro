@@ -27,15 +27,15 @@ import BaseTitle from "@components/BaseTitle.astro";
     .playground-icons {
         display: flex;
         flex-direction: column;
-        gap: var(--space-8);
+        gap: var(--space-16);
         margin: var(--space-24);
+        padding: var(--space-16) var(--space-24) var(--space-24);
+        border: 1px solid var(--clr-grey-200);
         
         &__content {
+            gap: var(--space-48);
             display: flex;
             flex-wrap: wrap;
-            gap: var(--space-48);
-            padding: var(--space-24);
-            border: 1px solid var(--clr-grey-200);
         }
         
         &__group {

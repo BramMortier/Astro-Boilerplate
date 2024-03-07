@@ -46,10 +46,16 @@ const {
         gap: var(--space-32);
         padding: var(--space-16);
         border: 1px solid var(--clr-black);
+        min-width: 30rem;
         max-width: 50rem;
+        width: 100%;
 
         &--reversed {
             flex-direction: row-reverse;
+        }
+
+        picture {
+            height: 100%;
         }
 
         &__left {

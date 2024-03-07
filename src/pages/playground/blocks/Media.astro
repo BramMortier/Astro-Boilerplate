@@ -6,7 +6,6 @@ import example1 from "@assets/images/1-1-example.png";
 import example2 from "@assets/images/16-9-example.png";
 import example3 from "@assets/images/9-16-example.png";
 import example4 from "@assets/images/4-5-example.png";
-import example5 from "@assets/images/5-4-example.png";
 ---
 
 <section id="playground-media" class="playground-media">
@@ -38,12 +37,6 @@ import example5 from "@assets/images/5-4-example.png";
                 alt="This is the third example image" 
                 sizes={`(max-width: 768px) 100vw, 33vw`}
             />
-            <BaseImage 
-                src={example5}
-                class="c-image--cover"
-                alt="This is the third example image" 
-                sizes={`(max-width: 768px) 100vw, 33vw`}
-            />
         </div>
     </div>
 </section>
@@ -52,15 +45,14 @@ import example5 from "@assets/images/5-4-example.png";
     .playground-media {
         display: flex;
         flex-direction: column;
-        gap: var(--space-8);
-
+        gap: var(--space-16);
+        padding: var(--space-16) var(--space-24) var(--space-24);
+        border: 1px solid var(--clr-grey-200);
         margin: var(--space-24);
         
         &__content {
             display: flex;
             gap: var(--space-16);
-            padding: var(--space-24);
-            border: 1px solid var(--clr-grey-200);
         }
         
         &__images {

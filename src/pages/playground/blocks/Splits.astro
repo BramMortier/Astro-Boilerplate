@@ -1,0 +1,62 @@
+---
+import BaseTitle from "@components/BaseTitle.astro";
+import BaseSplit from "@components/BaseSplit.astro";
+import BaseButton from "@components/BaseButton.astro";
+import BaseIcon from "@components/BaseIcon.astro";
+
+import splitImage from "@assets/images/5-4-example.png";
+---
+
+<section class="playground-splits">
+    <BaseTitle text="Splits" Tag="h4" />
+
+    <div class="playground-splits__content">
+        <div class="playground-splits__splits">
+            <BaseSplit 
+                title="This is a split" 
+                text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus error tempora voluptas optio voluptatum quisquam nam, explicabo perspiciatis unde consectetur dolorum eveniet, laborum maxime suscipit rem voluptates sequi, facere asperiores."
+                image={splitImage}
+            >
+                <BaseButton slot="cta">
+                    Get to know us
+                    <BaseIcon name="chevron" size={12} />
+                </BaseButton>
+                <BaseButton slot="cta" class="c-button--secondary">
+                    See more cases
+                    <BaseIcon name="chevron" size={12}/>
+                </BaseButton>
+            </BaseSplit>
+
+            <BaseSplit
+                position="reversed"
+                text="Possimus error tempora voluptas optio voluptatum quisquam nam, explicabo perspiciatis unde consectetur dolorum eveniet, laborum maxime suscipit rem voluptates sequi, facere asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo id qui illum repellendus a praesentium culpa beatae impedit obcaecati vitae."
+                image={splitImage}
+            >
+                <BaseButton slot="cta">Discover our options</BaseButton>
+            </BaseSplit>
+        </div>
+    </div>
+</section>
+
+<style scoped lang="scss">
+    .playground-splits {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+        margin: var(--space-24);
+        padding: var(--space-16) var(--space-24) var(--space-24);
+        border: 1px solid var(--clr-grey-200);
+        
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-24);
+        }
+        
+        &__splits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-24);
+        }
+    }
+</style>
