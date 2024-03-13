@@ -1,7 +1,5 @@
 ---
-import BaseImage from "@components/BaseImage.astro";
-import BaseTitle from "@components/BaseTitle.astro";
-import BaseText from "@components/BaseText.astro";
+import { BaseImage, BaseTitle, BaseText } from "@components/index";
 
 import buttons from "@assets/images/playground/buttons.png";
 import typography from "@assets/images/playground/typography.png";
@@ -36,6 +34,22 @@ const playgroundBlocks = [
 ];
 ---
 
+<script>
+    const filterOptions = [...document.querySelectorAll(".playground-filters__option")];
+
+    console.log(filterOptions);
+    filterOptions.forEach(option => {
+        option.addEventListener("click", (e) => {
+            const optionName = option.querySelector(".c-text").innerHTML;
+            console.log(optionName);
+        })
+    })
+
+    const updateFilter = () => {
+
+    }
+</script>
+
 <section class="playground-filters">
     <BaseTitle text="Available blocks" Tag="h4" />
 
@@ -45,7 +59,7 @@ const playgroundBlocks = [
                 <BaseImage
                     src={block.graphic}
                     class="c-picture--cover"
-                    alt="This is the first example image" 
+                    alt="This is the first example image"
                     sizes={`(max-width: 768px) 100vw, 33vw`}
                 />
 
@@ -85,22 +99,3 @@ const playgroundBlocks = [
         }
     }
 </style>
-
-<script>
-    const playgroundBlockElements = [];
-    const visibleItems = [];
-
-    const updateFilter = () => {
-
-    }
-
-    const renderBlocks = () => {
-        playgroundBlockElements.forEach(block => {
-            if (visibleItems.includes(block)) {
-                block.classList.remove("invisible");
-            } else {
-                block.classList.add("invisible");
-            }
-        })        
-    }
-</script>
