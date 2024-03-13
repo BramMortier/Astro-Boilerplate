@@ -1,0 +1,67 @@
+---
+import { BaseCard, BaseTitle } from "@components/index";
+
+import { example5_4 } from "@assets/images/placeholders/index";
+---
+
+<section id="playground-cards" class="playground-cards">
+    <BaseTitle text="Cards & Splits" Tag="h4" />
+
+    <div class="playground-cards__content">
+        <div class="playground-cards__basic">
+            <BaseCard 
+                title="Explanation" 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+            />
+            <BaseCard 
+                title="Our way of working on large projects" 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+                button={{ text: "Read more" }}
+            />
+            <BaseCard 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+                button={{ text: "Compare options" }}
+            />
+        </div>
+    
+        <div class="playground-cards__complex">
+            <BaseCard 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+                button={{ text: "View locations" }}
+                image={example5_4}
+            />
+            <BaseCard 
+                title="Cozy 2 person Cottage" 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+                button={{ text: "Book a reservation" }}
+                image={example5_4}
+            />
+            <BaseCard 
+                button={{ text: "Case study" }}
+                image={example5_4}
+            />
+        </div>
+    </div>
+</section>
+
+<style scoped lang="scss">
+    .playground-cards {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+        margin: var(--space-24);
+        padding: var(--space-16) var(--space-24) var(--space-24);
+        border: 1px solid var(--clr-grey-200);
+        
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-24);
+        }
+        
+        &__basic, &__complex {
+            display: flex;
+            gap: var(--space-24);
+        }
+    }
+</style>
