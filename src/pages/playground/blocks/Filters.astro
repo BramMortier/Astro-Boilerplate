@@ -44,7 +44,7 @@ const playgroundBlocks = [
             <div class="playground-filters__option">
                 <BaseImage
                     src={block.graphic}
-                    class="c-image--cover"
+                    class="c-picture--cover"
                     alt="This is the first example image" 
                     sizes={`(max-width: 768px) 100vw, 33vw`}
                 />
@@ -73,6 +73,10 @@ const playgroundBlocks = [
             display: flex;
             flex-direction: column;
             gap: var(--space-4);
+
+            .c-picture__image {
+                height: 100%;
+            }
 
             &:hover {
                 filter: brightness(95%);

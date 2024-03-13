@@ -24,16 +24,18 @@ const {
         "c-split", 
         { "c-split--reversed": position === "reversed" },
         className
-    ]}>
+    ]}
+>
     <div class="c-split__left">
         {title && <BaseTitle Tag="h4" text={title}/>}
         <BaseText text={text}/>
         <slot name="cta"/>
     </div>
+
     <div class="c-split__right">
         <BaseImage
             src={image}
-            class="c-image--cover"
+            class="c-picture--cover"
             alt="split image"
             sizes={`(max-width: 768px) 100vw, 33vw`}
         />
@@ -54,8 +56,12 @@ const {
             flex-direction: row-reverse;
         }
 
-        picture {
+        .c-picture {
             height: 100%;
+
+            &__image {
+                height: 100%;
+            }
         }
 
         &__left {

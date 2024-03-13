@@ -6,6 +6,9 @@ import example1 from "@assets/images/1-1-example.png";
 import example2 from "@assets/images/16-9-example.png";
 import example3 from "@assets/images/9-16-example.png";
 import example4 from "@assets/images/4-5-example.png";
+import example5 from "@assets/images/5-4-example.png";
+
+const exampleImages = [example1, example2, example3, example4, example5];
 ---
 
 <section id="playground-media" class="playground-media">
@@ -13,30 +16,14 @@ import example4 from "@assets/images/4-5-example.png";
 
     <div class="playground-media__content">
         <div class="playground-media__images">
-            <BaseImage 
-                src={example1}
-                class="c-image--cover"
-                alt="This is the first example image" 
-                sizes={`(max-width: 768px) 100vw, 33vw`}
-            />
-            <BaseImage 
-                src={example2}
-                class="c-image--cover"
-                alt="This is the second example image" 
-                sizes={`(max-width: 768px) 100vw, 33vw`}
-            />
-            <BaseImage 
-                src={example3}
-                class="c-image--cover"
-                alt="This is the third example image" 
-                sizes={`(max-width: 768px) 100vw, 33vw`}
-            />
-            <BaseImage 
-                src={example4}
-                class="c-image--cover"
-                alt="This is the third example image" 
-                sizes={`(max-width: 768px) 100vw, 33vw`}
-            />
+            {exampleImages.map((img, index) => (
+                <BaseImage 
+                    src={img}
+                    class="c-picture--cover"
+                    alt={`This is example image ${index}`}
+                    sizes={`(max-width: 768px) 100vw, 20vw`}
+                />
+            ))}
         </div>
     </div>
 </section>
@@ -59,6 +46,10 @@ import example4 from "@assets/images/4-5-example.png";
             display: flex;
             flex-wrap: wrap;
             gap: var(--space-8);
+
+            .c-picture__image {
+                max-height: 280px;
+            }
         }
     }
 </style>
