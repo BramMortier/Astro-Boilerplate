@@ -1,83 +1,67 @@
 ---
-import BaseSplit from "@components/BaseSplit.astro";
-import BaseButton from "@components/BaseButton.astro";
-import BaseIcon from "@components/BaseIcon.astro";
-import BaseCard from "@components/BaseCard.astro";
+import { BaseCard, BaseTitle } from "@components/index";
 
-import cardImage from "@assets/images/5-4-example.png";
+import { example5_4 } from "@assets/images/placeholders/index";
 ---
 
-<section class="playground-cards">
-    <div class="playground-cards__basic">
-        <BaseCard 
-            title="Explanation" 
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-        />
-        <BaseCard 
-            title="Our way of working on large projects" 
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-            button={{ text: "Read more" }}
-        />
-        <BaseCard 
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-            button={{ text: "Compare options" }}
-        />
-    </div>
+<section id="playground-cards" class="playground-cards">
+    <BaseTitle text="Cards & Splits" Tag="h4" />
 
-    <div class="playground-cards__complex">
-        <BaseCard 
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-            button={{ text: "View locations" }}
-            image={cardImage}
-        />
-        <BaseCard 
-            title="Cozy 2 person Cottage" 
-            text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-            button={{ text: "Book a reservation" }}
-            image={cardImage}
-        />
-        <BaseCard 
-            button={{ text: "Case study" }}
-            image={cardImage}
-        />
-    </div>
-
-    <BaseSplit 
-        title="This is a split" 
-        text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus error tempora voluptas optio voluptatum quisquam nam, explicabo perspiciatis unde consectetur dolorum eveniet, laborum maxime suscipit rem voluptates sequi, facere asperiores."
-        image={cardImage}
-    >
-        <BaseButton slot="cta">
-            Get to know us
-            <BaseIcon name="chevron" size={12} />
-        </BaseButton>
-        <BaseButton slot="cta" class="c-button--secondary">
-            See more cases
-            <BaseIcon name="chevron" size={12}/>
-        </BaseButton>
-    </BaseSplit>
+    <div class="playground-cards__content">
+        <div class="playground-cards__basic">
+            <BaseCard 
+                title="Explanation" 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+            />
+            <BaseCard 
+                title="Our way of working on large projects" 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+                button={{ text: "Read more" }}
+            />
+            <BaseCard 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+                button={{ text: "Compare options" }}
+            />
+        </div>
     
-    <BaseSplit
-        position="reversed"
-        text="Possimus error tempora voluptas optio voluptatum quisquam nam, explicabo perspiciatis unde consectetur dolorum eveniet, laborum maxime suscipit rem voluptates sequi, facere asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo id qui illum repellendus a praesentium culpa beatae impedit obcaecati vitae."
-        image={cardImage}
-    >
-        <BaseButton slot="cta">Discover our options</BaseButton>
-    </BaseSplit>
+        <div class="playground-cards__complex">
+            <BaseCard 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+                button={{ text: "View locations" }}
+                image={example5_4}
+            />
+            <BaseCard 
+                title="Cozy 2 person Cottage" 
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
+                button={{ text: "Book a reservation" }}
+                image={example5_4}
+            />
+            <BaseCard 
+                button={{ text: "Case study" }}
+                image={example5_4}
+            />
+        </div>
+    </div>
 </section>
 
 <style scoped lang="scss">
     .playground-cards {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: var(--space-16);
-
         margin: var(--space-24);
-        padding: var(--space-24);
+        padding: var(--space-16) var(--space-24) var(--space-24);
         border: 1px solid var(--clr-grey-200);
+        
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-24);
+        }
         
         &__basic, &__complex {
             display: flex;
-            gap: var(--space-16);
+            gap: var(--space-24);
         }
     }
+</style>

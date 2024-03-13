@@ -1,45 +1,25 @@
 ---
-import BaseImage from "@components/BaseImage.astro";
+import { BaseImage, BaseTitle } from "@components/index";
 
-import example1 from "@assets/images/1-1-example.png";
-import example2 from "@assets/images/16-9-example.png";
-import example3 from "@assets/images/9-16-example.png";
-import example4 from "@assets/images/4-5-example.png";
-import example5 from "@assets/images/5-4-example.png";
+import { example1_1, example4_5, example5_4, example16_9, example9_16 } from "@assets/images/placeholders/index";
+
+const exampleImages = [example1_1, example4_5, example5_4, example9_16, example16_9];
 ---
 
-<section class="playground-media">
-    <div class="playground-media__images">
-        <BaseImage 
-            src={example1}
-            class="c-image--cover"
-            alt="This is the first example image" 
-            sizes={`(max-width: 768px) 100vw, 33vw`}
-        />
-        <BaseImage 
-            src={example2}
-            class="c-image--cover"
-            alt="This is the second example image" 
-            sizes={`(max-width: 768px) 100vw, 33vw`}
-        />
-        <BaseImage 
-            src={example3}
-            class="c-image--cover"
-            alt="This is the third example image" 
-            sizes={`(max-width: 768px) 100vw, 33vw`}
-        />
-        <BaseImage 
-            src={example4}
-            class="c-image--cover"
-            alt="This is the third example image" 
-            sizes={`(max-width: 768px) 100vw, 33vw`}
-        />
-        <BaseImage 
-            src={example5}
-            class="c-image--cover"
-            alt="This is the third example image" 
-            sizes={`(max-width: 768px) 100vw, 33vw`}
-        />
+<section id="playground-media" class="playground-media">
+    <BaseTitle text="Media" Tag="h4" />
+
+    <div class="playground-media__content">
+        <div class="playground-media__images">
+            {exampleImages.map((img, index) => (
+                <BaseImage 
+                    src={img}
+                    class="c-picture--cover"
+                    alt={`This is example image ${index}`}
+                    sizes={`(max-width: 768px) 100vw, 20vw`}
+                />
+            ))}
+        </div>
     </div>
 </section>
 
@@ -48,15 +28,23 @@ import example5 from "@assets/images/5-4-example.png";
         display: flex;
         flex-direction: column;
         gap: var(--space-16);
-
-        margin: var(--space-24);
-        padding: var(--space-24);
+        padding: var(--space-16) var(--space-24) var(--space-24);
         border: 1px solid var(--clr-grey-200);
+        margin: var(--space-24);
+        
+        &__content {
+            display: flex;
+            gap: var(--space-16);
+        }
         
         &__images {
             display: flex;
             flex-wrap: wrap;
             gap: var(--space-8);
+
+            .c-picture__image {
+                max-height: 350px;
+            }
         }
     }
 </style>
