@@ -26,6 +26,10 @@ const IconComponent = iconMap[name];
 
 <style scoped lang="scss" define:vars={{ iconSize: `${size}px`, rotation: `${rotation}deg` }}>
     .c-icon {
+        --icon-color: var(--scheme-contrast);
+
+        color: var(--icon-color);
+        
         display: flex;
         justify-self: center;
         align-items: center;
