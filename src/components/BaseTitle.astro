@@ -8,6 +8,14 @@ interface Props  {
 const { Tag, text, class: className } = Astro.props
 ---
 
-<Tag class:list={className}>
+<Tag class:list={["c-title", className]}>
     {text}
 </Tag>
+
+<style scoped lang="scss">
+    .c-title {
+        --title-color: var(--scheme-contrast);
+
+        color: var(--title-color);
+    }
+</style>
