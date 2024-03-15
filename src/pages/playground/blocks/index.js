@@ -8,3 +8,4 @@ export { default as Colors } from "@playground/blocks/Colors.astro";
 export { default as Numbers } from "@playground/blocks/Numbers.astro";
 export { default as Cards } from "@playground/blocks/Cards.astro";
 export { default as Splits } from "@playground/blocks/Splits.astro";
+export { default as Links } from "@playground/blocks/Links.astro";

@@ -1,4 +1,5 @@
 export { default as BaseButton } from "@components/BaseButton.astro";
+export { default as BaseLink } from "@components/BaseLink.astro";
 export { default as BaseCard } from "@components/BaseCard.astro";
 export { default as BaseIcon } from "@components/BaseIcon.astro";
 export { default as BaseImage } from "@components/BaseImage.astro";
