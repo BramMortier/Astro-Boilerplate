@@ -1,0 +1,11 @@
+.scheme-default {
+    --scheme-base: var(--clr-white);
+    --scheme-contrast: var(--clr-black);
+    --scheme-accent: var(--clr-grey-200);
+}
+
+.scheme-dark {
+    --scheme-base: var(--clr-black);
+    --scheme-contrast: var(--clr-white);
+    --scheme-accent: var(--clr-black);
+}
