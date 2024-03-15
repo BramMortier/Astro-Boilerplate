@@ -42,10 +42,15 @@ const {
 
 <style scoped lang="scss">
     .c-split {
+        --split-bg: transparent;
+        --split-border: var(--scheme-contrast);
+
+        background-color: var(--split-bg);
+        border: 1px solid var(--split-border);
+
         display: flex;
         gap: var(--space-32);
         padding: var(--space-16);
-        border: 1px solid var(--clr-black);
         min-width: 30rem;
         max-width: 50rem;
         width: 100%;
