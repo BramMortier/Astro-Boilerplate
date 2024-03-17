@@ -1,0 +1,56 @@
+---
+import { BaseLink, BaseSocialLink } from "@components/index"
+
+interface Props {
+	class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<nav class:list={["c-navigation", className]}>
+	<ul class="c-navigation__links">
+		<li class="c-navigation__link">
+			<BaseLink href="#">Home</BaseLink>
+		</li>
+		<li class="c-navigation__link">
+			<BaseLink href="#">About</BaseLink>
+		</li>
+		<li class="c-navigation__link">
+			<BaseLink href="#">Projects</BaseLink>
+		</li>
+		<li class="c-navigation__link">
+			<BaseLink href="#">Contact</BaseLink>
+		</li>
+	</ul>
+
+	<ul class="c-navigation__social-links">
+		<li class="c-navigation__social-link">
+			<BaseSocialLink href="#" icon="instagram" iconSize={20} />
+		</li>
+		<li class="c-navigation__social-link">
+			<BaseSocialLink href="#" icon="facebook" iconSize={20} />
+		</li>
+		<li class="c-navigation__social-link">
+			<BaseSocialLink href="#" icon="linkedin" iconSize={20} />
+		</li>
+	</ul>
+</nav>
+
+<style scoped lang="scss">
+	.c-navigation {
+		display: flex;
+		align-items: center;
+		gap: var(--space-48);
+
+		&__links {
+			display: flex;
+			gap: var(--space-64);
+		}
+
+		&__social-links {
+			display: flex;
+			gap: var(--space-12);
+		}
+	}
+</style>
