@@ -1,88 +1,88 @@
-// ===========================================================================
+// =============================================================================
 // Heading typos
-// ===========================================================================
+// =============================================================================
 h1,
 .typo-h1 {
-    font-size: var(--fs-72);
-    font-family: var(--font-primary);
-    font-weight: 700;
-    line-height: var(--lh-none);
+	font-size: var(--fs-72);
+	font-family: var(--font-primary);
+	font-weight: 700;
+	line-height: var(--lh-none);
 }
 
 h2,
 .typo-h2 {
-    font-size: var(--fs-48);
-    font-family: var(--font-primary);
-    font-weight: 700;
-    line-height: var(--lh-none);
+	font-size: var(--fs-48);
+	font-family: var(--font-primary);
+	font-weight: 700;
+	line-height: var(--lh-none);
 }
 
 h3,
 .typo-h3 {
-    font-size: var(--fs-32);
-    font-family: var(--font-primary);
-    font-weight: 600;
-    line-height: var(--lh-none);
+	font-size: var(--fs-32);
+	font-family: var(--font-primary);
+	font-weight: 600;
+	line-height: var(--lh-none);
 }
 
 h4,
 .typo-h4 {
-    font-size: var(--fs-24);
-    font-family: var(--font-primary);
-    font-weight: 600;
-    line-height: var(--lh-spacious);
+	font-size: var(--fs-24);
+	font-family: var(--font-primary);
+	font-weight: 600;
+	line-height: var(--lh-spacious);
 }
 
 h5,
 .typo-h5 {
-    font-size: var(--fs-20);
-    font-family: var(--font-primary);
-    font-weight: 600;
-    line-height: var(--lh-none);
+	font-size: var(--fs-20);
+	font-family: var(--font-primary);
+	font-weight: 600;
+	line-height: var(--lh-none);
 }
 
 h6,
 .typo-h6 {
-    font-size: var(--fs-16);
-    font-family: var(--font-primary);
-    font-weight: 600;
-    line-height: var(--lh-none);
+	font-size: var(--fs-16);
+	font-family: var(--font-primary);
+	font-weight: 600;
+	line-height: var(--lh-none);
 }
 
-// ===========================================================================
+// =============================================================================
 // Text typos
-// ===========================================================================
+// =============================================================================
 p,
 .typo-p {
-    font-family: var(--font-secondary);
-    font-size: var(--fs-16);
-    font-weight: var(--fw-400);
-    line-height: var(--lh-spacious);
+	font-family: var(--font-secondary);
+	font-size: var(--fs-16);
+	font-weight: var(--fw-400);
+	line-height: var(--lh-spacious);
 
-    &--large {
-        font-size: var(--fs-24);
-    }
+	&--large {
+		font-size: var(--fs-24);
+	}
 }
 
 strong,
 .typo-strong {
-    font-family: var(--font-secondary);
-    font-size: var(--fs-16);
-    font-weight: var(--fw-600);
-    line-height: var(--lh-spacious);
+	font-family: var(--font-secondary);
+	font-size: var(--fs-16);
+	font-weight: var(--fw-600);
+	line-height: var(--lh-spacious);
 }
 
 i,
 .typo-italic {
-    font-family: var(--font-secondary);
-    font-size: var(--fs-16);
-    font-weight: var(--fw-400);
-    font-style: italic;
-    line-height: var(--lh-spacious);
+	font-family: var(--font-secondary);
+	font-size: var(--fs-16);
+	font-weight: var(--fw-400);
+	font-style: italic;
+	line-height: var(--lh-spacious);
 }
 
 .typo-label {
-    font-size: var(--fs-20);
-    font-weight: var(--fw-500);
-    text-transform: uppercase;
+	font-size: var(--fs-20);
+	font-weight: var(--fw-500);
+	text-transform: uppercase;
 }

@@ -1,76 +1,91 @@
 ---
-import "@styles/index.scss";
-import { Filters, Buttons, Typography, Icons, Media, Colors, Numbers, Cards, Splits } from "@playground/blocks/index";
+import "@styles/index.scss"
+import {
+	Filters,
+	Buttons,
+	Links,
+	Typography,
+	Icons,
+	Media,
+	Colors,
+	Numbers,
+	Cards,
+	Splits
+} from "@playground/blocks/index"
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
-    </head>
-    <body class="scheme-default">
-        <main>
-            <Colors />
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body class="scheme-default">
+		<main>
+			<Colors />
 
-            <Buttons />
-            <Buttons class="scheme-dark"/>
+			<Buttons />
+			<Buttons class="scheme-dark" />
 
-            <Icons />
-            <Icons class="scheme-dark"/>
+			<Links />
+			<Links class="scheme-dark" />
 
-            <Typography />
-            <Typography class="scheme-dark"/>
+			<Icons />
+			<Icons class="scheme-dark" />
 
-            <Numbers />
-            <Numbers class="scheme-dark"/>
+			<Typography />
+			<Typography class="scheme-dark" />
 
-            <Media />
-            <Media class="scheme-dark"/>
+			<Numbers />
+			<Numbers class="scheme-dark" />
 
-            <Cards />
-            <Cards class="scheme-dark"/>
+			<Media />
+			<Media class="scheme-dark" />
 
-            <Splits />
-            <Splits class="scheme-dark"/>
-        </main>
+			<Cards />
+			<Cards class="scheme-dark" />
 
-        <aside>
-            <Filters />
-        </aside>
-    </body>
+			<Splits />
+			<Splits class="scheme-dark" />
+		</main>
+
+		<aside>
+			<Filters />
+		</aside>
+	</body>
 </html>
 
 <style scoped lang="scss">
-    body {
-        display: grid;
-        grid-template-columns: 1fr 25rem;
+	body {
+		display: grid;
+		grid-template-columns: 1fr 25rem;
 
-        main {
-            overflow-y: scroll;
-            height: 100vh;
-        }
-    }
-    
-    aside {
-        border-left: 1px solid var(--clr-grey-200);
-        max-height: 100vh;
-        overflow-y: scroll;
-    }
+		main {
+			overflow-y: scroll;
+			height: 100vh;
+		}
+	}
 
-    main, aside {
-        &::-webkit-scrollbar {
-            width: 0.75rem;
-        }
-        
-        &::-webkit-scrollbar-track {
-            background-color: var(--clr-grey-100);
-        }
-        
-        &::-webkit-scrollbar-thumb {
-            background-color: var(--clr-grey-200);
-        }
-    }
+	aside {
+		border-left: 1px solid var(--clr-grey-200);
+		max-height: 100vh;
+		overflow-y: scroll;
+	}
+
+	main,
+	aside {
+		&::-webkit-scrollbar {
+			width: 0.75rem;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: var(--clr-grey-100);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--clr-grey-200);
+		}
+	}
 </style>

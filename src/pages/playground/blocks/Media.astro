@@ -1,62 +1,69 @@
 ---
-import { BaseImage, BaseTitle } from "@components/index";
+import { BaseImage, BaseTitle } from "@components/index"
 
-import { example1_1, example4_5, example5_4, example16_9, example9_16 } from "@assets/images/placeholders/index";
+import {
+	example1_1,
+	example4_5,
+	example5_4,
+	example16_9,
+	example9_16
+} from "@assets/images/placeholders/index"
 
 interface Props {
-    class?: string;
+	class?: string
 }
 
-const { class: className } = Astro.props;
+const { class: className } = Astro.props
 
-const exampleImages = [example1_1, example4_5, example5_4, example9_16, example16_9];
+const exampleImages = [example1_1, example4_5, example5_4, example9_16, example16_9]
 ---
 
 <section id="playground-media" class:list={["playground-media", className]}>
-    <BaseTitle text="Media" Tag="h4" />
+	<BaseTitle text="Media" Tag="h4" />
 
-    <div class="playground-media__content">
-        <div class="playground-media__images">
-            {exampleImages.map((img, index) => (
-                <BaseImage 
-                    src={img}
-                    class="c-picture--cover"
-                    alt={`This is example image ${index}`}
-                    sizes={`(max-width: 768px) 100vw, 20vw`}
-                />
-            ))}
-        </div>
-    </div>
+	<div class="playground-media__content">
+		<div class="playground-media__images">
+			{
+				exampleImages.map((img, index) => (
+					<BaseImage
+						src={img}
+						class="c-picture--cover"
+						alt={`This is example image ${index}`}
+						sizes={`(max-width: 768px) 100vw, 20vw`}
+					/>
+				))
+			}
+		</div>
+	</div>
 </section>
 
 <style scoped lang="scss">
-    .playground-media {
-        --playground-bg: var(--scheme-base);
-        --playground-border: var(--scheme-accent);
+	.playground-media {
+		--playground-bg: var(--scheme-base);
+		--playground-border: var(--scheme-accent);
 
-        background-color: var(--playground-bg);
-        border: 1px solid var(--playground-border);
+		background-color: var(--playground-bg);
+		border: 1px solid var(--playground-border);
 
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-16);
-        padding: var(--space-16) var(--space-24) var(--space-24);
-        margin: var(--space-24);
-        
-        &__content {
-            display: flex;
-            gap: var(--space-16);
-        }
-        
-        &__images {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-8);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-16);
+		padding: var(--space-16) var(--space-24) var(--space-24);
+		margin: var(--space-24);
 
-            .c-picture__image {
-                max-height: 350px;
-            }
-        }
-    }
+		&__content {
+			display: flex;
+			gap: var(--space-16);
+		}
+
+		&__images {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--space-8);
+
+			.c-picture__image {
+				max-height: 350px;
+			}
+		}
+	}
 </style>
-
