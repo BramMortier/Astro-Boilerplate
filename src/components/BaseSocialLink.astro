@@ -1,0 +1,36 @@
+---
+import { BaseIcon } from "@components/index"
+
+interface Props {
+	icon: string
+	iconSize?: number
+	class?: string
+	href?: string
+}
+
+const { class: className, href, icon, iconSize } = Astro.props
+---
+
+<a href={href} class:list={["c-social-link", className]}>
+	<BaseIcon name={icon} size={iconSize} />
+</a>
+
+<style scoped lang="scss">
+	.c-social-link {
+		--social-link-color: var(--scheme-base);
+		--social-link-bg: var(--scheme-contrast);
+
+		color: var(--social-link-color);
+		background-color: var(--social-link-bg);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: var(--space-8);
+		transition: all ease-out 0.15s;
+
+		&:hover {
+			transform: translateY(calc(var(--space-4) * -1));
+		}
+	}
+</style>
