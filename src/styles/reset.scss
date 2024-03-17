@@ -1,15 +1,18 @@
+// =============================================================================
+// Global styles reset
+// =============================================================================
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    min-height: 100vh;
+	min-height: 100vh;
 }
 
 .c-split .c-picture {
-    height: 100%;
+	height: 100%;
 }
