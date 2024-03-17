@@ -73,7 +73,7 @@
 	$border-radius-values: (3, 5, 10);
 
 	@each $value in $border-radius-values {
-		--border-radius-#{$value}: #{$value};
+		--border-radius-#{$value}: #{$value}px;
 	}
 
 	--border-radius-round: 100%;
