@@ -1,32 +1,9 @@
 ---
 import "../styles/index.scss"
+
+import { BaseLayout } from "@layouts/index"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<main></main>
-	</body>
-</html>
-
-<style scoped lang="scss">
-	main {
-		padding: var(--space-16);
-	}
-
-	div {
-		display: flex;
-		gap: 1rem;
-		margin-bottom: 1rem;
-
-		&.col {
-			flex-direction: column;
-		}
-	}
-</style>
+<BaseLayout title="Homepage" description="This is a page">
+	<!-- Page content -->
+</BaseLayout>

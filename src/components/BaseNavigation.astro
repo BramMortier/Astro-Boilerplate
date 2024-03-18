@@ -3,37 +3,28 @@ import { BaseLink, BaseSocialLink } from "@components/index"
 
 interface Props {
 	class?: string
+	navLinks: any
+	socialLinks: any
 }
 
-const { class: className } = Astro.props
+const { class: className, navLinks, socialLinks } = Astro.props
 ---
 
 <nav class:list={["c-navigation", className]}>
 	<ul class="c-navigation__links">
-		<li class="c-navigation__link">
-			<BaseLink href="#">Home</BaseLink>
-		</li>
-		<li class="c-navigation__link">
-			<BaseLink href="#">About</BaseLink>
-		</li>
-		<li class="c-navigation__link">
-			<BaseLink href="#">Projects</BaseLink>
-		</li>
-		<li class="c-navigation__link">
-			<BaseLink href="#">Contact</BaseLink>
-		</li>
+		{navLinks.map(link => (
+			<li class="c-navigation__link">
+				<BaseLink href={link.href}>{link.text}</BaseLink>
+			</li>
+		))}
 	</ul>
 
 	<ul class="c-navigation__social-links">
-		<li class="c-navigation__social-link">
-			<BaseSocialLink href="#" icon="instagram" iconSize={20} />
-		</li>
-		<li class="c-navigation__social-link">
-			<BaseSocialLink href="#" icon="facebook" iconSize={20} />
-		</li>
-		<li class="c-navigation__social-link">
-			<BaseSocialLink href="#" icon="linkedin" iconSize={20} />
-		</li>
+		{socialLinks.map(link => (
+			<li class="c-navigation__social-link">
+				<BaseSocialLink href={link.href} icon={link.icon} iconSize={20} />
+			</li>
+		))}
 	</ul>
 </nav>
 
