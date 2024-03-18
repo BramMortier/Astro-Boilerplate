@@ -32,16 +32,13 @@ const { title, text, image, position = "default", class: className } = Astro.pro
 <style scoped lang="scss">
 	.c-split {
 		--split-bg: transparent;
-		--split-border: var(--scheme-contrast);
 
 		background-color: var(--split-bg);
-		border: 1px solid var(--split-border);
 
 		display: flex;
-		gap: var(--space-32);
-		padding: var(--space-16);
+		gap: var(--space-96);
 		min-width: 30rem;
-		max-width: 50rem;
+		max-width: 75rem;
 		width: 100%;
 
 		&--reversed {
@@ -62,6 +59,7 @@ const { title, text, image, position = "default", class: className } = Astro.pro
 			flex-direction: column;
 			justify-content: center;
 			gap: var(--space-16);
+			padding: var(--space-16);
 		}
 
 		&__right {
