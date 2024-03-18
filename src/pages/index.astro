@@ -2,8 +2,11 @@
 import "../styles/index.scss"
 
 import { BaseLayout } from "@layouts/index"
+import { content } from "@config/pages/homepage"
+
+import { Cards } from "@blocks/index"
 ---
 
 <BaseLayout title="Homepage" description="This is a page">
-	<!-- Page content -->
+	<Cards title={content.cards.title} text={content.cards.text} items={content.cards.items} />
 </BaseLayout>
