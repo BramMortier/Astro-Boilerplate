@@ -1,8 +1,8 @@
 // =============================================================================
-// Import stylesheet partials
+// Containers
 // =============================================================================
-@use "./root.scss";
-@use "./reset.scss";
-@use "./typography.scss";
-@use "./schemes.scss";
-@use "./utils.scss";
+.container {
+	margin-inline: auto;
+	width: 100%;
+	max-width: var(--container-default);
+}

@@ -1,6 +1,8 @@
 ---
 import "../styles/index.scss"
 
+import { Header } from "@blocks/index"
+
 interface Props {
 	title: string
 	description: string
@@ -22,9 +24,18 @@ const { title, description } = Astro.props
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
-	<body class="scheme-default">
+	<body class="base-layout scheme-default">
+		<Header />
+
 		<main>
 			<slot />
 		</main>
 	</body>
 </html>
+
+<style scoped lang="scss">
+	.base-layout {
+		display: flex;
+		flex-direction: column;
+	}
+</style>
