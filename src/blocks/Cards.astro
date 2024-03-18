@@ -13,7 +13,7 @@ const { class: className, title, text, items } = Astro.props
 
 <section class:list={["cards container", className]}>
 	<div class="cards__intro">
-		<BaseTitle text={title} Tag="h4" />
+		<BaseTitle text={title} Tag="h3" />
 		<BaseText text={text} />
 	</div>
 
@@ -24,7 +24,6 @@ const { class: className, title, text, items } = Astro.props
 
 <style scoped lang="scss">
 	.cards {
-		margin-top: var(--space-64);
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-64);
@@ -38,6 +37,7 @@ const { class: className, title, text, items } = Astro.props
 
 		&__list {
 			display: flex;
+			gap: var(--space-16);
 			justify-content: space-between;
 		}
 	}

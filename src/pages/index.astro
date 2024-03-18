@@ -4,9 +4,11 @@ import "../styles/index.scss"
 import { BaseLayout } from "@layouts/index"
 import { content } from "@config/pages/homepage"
 
-import { Cards } from "@blocks/index"
+import { Cards, Split } from "@blocks/index"
 ---
 
 <BaseLayout title="Homepage" description="This is a page">
 	<Cards title={content.cards.title} text={content.cards.text} items={content.cards.items} />
+
+	<Split title={content.split.title} text={content.split.text} image={content.split.image} />
 </BaseLayout>

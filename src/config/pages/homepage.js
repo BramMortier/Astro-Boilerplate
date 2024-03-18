@@ -27,5 +27,10 @@ export const content = {
 				}
 			}
 		]
+	},
+	split: {
+		title: "This is an example split",
+		text: "Possimus error tempora voluptas optio voluptatum quisquam nam, explicabo perspiciatis unde consectetur dolorum eveniet, laborum maxime suscipit rem voluptates sequi, facere asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo id qui illum repellendus a praesentium culpa beatae impedit obcaecati vitae.",
+		image: example5_4
 	}
 }

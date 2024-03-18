@@ -1,0 +1,27 @@
+---
+import { BaseTitle, BaseSplit } from "@components/index"
+
+interface Props {
+	title: string
+	text: string
+	image: ImageMetadata
+	class?: string
+}
+
+const { class: className, title, text, image } = Astro.props
+---
+
+<section class:list={["split container", className]}>
+	<BaseTitle text={title} Tag="h3" />
+
+	<BaseSplit text={text} image={image} />
+</section>
+
+<style scoped lang="scss">
+	.split {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-64);
+	}
+</style>
