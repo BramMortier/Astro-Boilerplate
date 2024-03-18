@@ -1,0 +1,39 @@
+---
+import { BaseTitle, BaseNavigation } from "@components/index";
+
+interface Props {
+    class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<section class:list={["playground-navigation", className]}>
+    <BaseTitle text="Navigation" Tag="h4" />
+
+    <div class="playground-navigation__content">
+        <BaseNavigation />
+    </div>
+</section>
+
+<style scoped lang="scss">
+	.playground-navigation {
+		--playground-bg: var(--scheme-base);
+		--playground-border: var(--scheme-accent);
+
+		background-color: var(--playground-bg);
+		border: 1px solid var(--playground-border);
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-16);
+		margin: var(--space-24);
+		padding: var(--space-16) var(--space-24) var(--space-24);
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-16);
+		}
+    }
+</style>

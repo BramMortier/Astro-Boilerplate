@@ -1,5 +1,5 @@
 ---
-import { BaseTitle, BaseIcon, BaseLink, BaseNavigation } from "@components/index"
+import { BaseTitle, BaseIcon, BaseLink, BaseSocialLink } from "@components/index"
 
 interface Props {
 	class?: string
@@ -9,7 +9,7 @@ const { class: className } = Astro.props
 ---
 
 <section id="playground-links" class:list={["playground-links", className]}>
-	<BaseTitle text="Links & Navigation" Tag="h4" />
+	<BaseTitle text="Links" Tag="h4" />
 
 	<div class="playground-links__content">
 		<div class="playground-links__normal">
@@ -25,8 +25,12 @@ const { class: className } = Astro.props
 			</BaseLink>
 		</div>
 
-		<div class="playground-links__navigation">
-			<BaseNavigation />
+		<div class="playground-links__social">
+			<BaseSocialLink href="#" icon="linkedin" iconSize={20} />
+			<BaseSocialLink href="#" icon="instagram" iconSize={20} />
+			<BaseSocialLink href="#" icon="facebook" iconSize={20} />
+			<BaseSocialLink href="#" icon="github" iconSize={20} />
+			<BaseSocialLink href="#" icon="reddit" iconSize={20} />
 		</div>
 	</div>
 </section>
