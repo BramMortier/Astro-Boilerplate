@@ -1,7 +1,7 @@
 ---
 import { socials } from "@config/global/socials"
 import { navigation } from "@config/global/navigation"
-import { BaseNavigation, BaseImage } from "@components/index"
+import { BaseNavigation, BaseImage, BaseContainer } from "@components/index"
 
 interface Props {
 	class?: string
@@ -10,16 +10,18 @@ interface Props {
 const { class: className } = Astro.props
 ---
 
-<header class:list={["header container", className]}>
-	<BaseImage
-		src={navigation.logo}
-		class="c-picture--cover"
-		alt={`Site logo`}
-		sizes={`(max-width: 768px) 100vw, 20vw`}
-	/>
+<BaseContainer Tag="header" class={className}>
+	<div class="header">
+		<BaseImage
+			src={navigation.logo}
+			class="c-picture--cover"
+			alt={`Site logo`}
+			sizes={`(max-width: 768px) 100vw, 20vw`}
+		/>
 
-	<BaseNavigation navLinks={navigation.links} socialLinks={socials.links} />
-</header>
+		<BaseNavigation navLinks={navigation.links} socialLinks={socials.links} />
+	</div>
+</BaseContainer>
 
 <style scoped lang="scss">
 	.header {

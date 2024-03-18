@@ -1,0 +1,42 @@
+---
+interface Props {
+	class?: string
+	Tag?: string
+}
+
+const { class: className, Tag = "section" } = Astro.props
+---
+
+<Tag class:list={["c-container", className]}>
+	<div class="c-container__content">
+		<slot />
+	</div>
+</Tag>
+
+<style scoped lang="scss">
+	.c-container {
+		--container-width: 62.5rem;
+		--container-bound-l: var(--space-24);
+		--container-bound-r: var(--space-24);
+		--container-bg: var(--scheme-base);
+
+		display: grid;
+		background-color: var(--container-bg);
+		grid-template-columns:
+			auto
+			var(--container-bound-l)
+			var(--container-width)
+			var(--container-bound-r)
+			auto;
+
+		&__content {
+			grid-column: 3 / 4;
+		}
+
+		&--full {
+			--container-width: 100vw;
+			--container-bound-l: 0;
+			--container-bound-r: 0;
+		}
+	}
+</style>
