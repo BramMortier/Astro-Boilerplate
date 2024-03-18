@@ -1,4 +1,6 @@
 ---
+import { socials } from "@config/global/socials";
+import { navigation } from "@config/global/navigation";
 import { BaseTitle, BaseNavigation } from "@components/index";
 
 interface Props {
@@ -12,7 +14,7 @@ const { class: className } = Astro.props
     <BaseTitle text="Navigation" Tag="h4" />
 
     <div class="playground-navigation__content">
-        <BaseNavigation />
+        <BaseNavigation navLinks={navigation.links} socialLinks={socials.links}/>
     </div>
 </section>
 

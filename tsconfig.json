@@ -3,6 +3,7 @@
         "baseUrl": ".",
         "paths": {
             "@assets/*": ["src/assets/*"],
+            "@config/*": ["src/config/*"],
             "@blocks/*": ["src/blocks/*"],
             "@components/*": ["src/components/*"],
             "@content/*": ["src/content/*"],
