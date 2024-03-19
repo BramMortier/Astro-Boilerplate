@@ -31,7 +31,7 @@ const { class: className, title, text, items } = Astro.props
 	</div>
 </div>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.cards {
 		display: flex;
 		flex-direction: column;
@@ -51,9 +51,9 @@ const { class: className, title, text, items } = Astro.props
 			grid-template-columns: repeat(12, 1fr);
 			gap: var(--container-default-gap);
 		}
-	}
 
-	.cards__list-item {
-		grid-column: span 4;
+		&__list-item {
+			grid-column: span 4;
+		}
 	}
 </style>
