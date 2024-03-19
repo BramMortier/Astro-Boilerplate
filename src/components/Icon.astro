@@ -1,31 +1,20 @@
 ---
 import {
 	Arrow,
-	ArrowRounded,
-	Chevron,
-	ChevronRounded,
-	CircleArrow,
-	CircleArrowRounded,
-	DiagonalArrow,
-	DiagonalArrowRounded,
-	Discord,
+	BgDots,
+	Bookmark,
+	Chrome,
+	Close,
+	Error,
 	Facebook,
-	FrontendMentor,
-	Github,
-	Instagram,
-	Linkedin,
-	Mail,
-	Messenger,
-	Phone,
-	Pinterest,
-	Reddit,
-	Smartphone,
-	Snapchat,
-	Spotify,
-	Twitch,
-	Whatsapp,
-	X,
-	Youtube
+	Firefox,
+	Hamburger,
+	Opera,
+	Twitter,
+	HeroIllustration,
+	IntelligentSearch,
+	OneClickBookmark,
+	ShareBookmarks
 } from "@assets/icons/index"
 
 interface Props {
@@ -38,32 +27,21 @@ interface Props {
 const { name, class: className, rotation, size = 16 } = Astro.props
 
 const iconMap = {
+	"hero-illustration": HeroIllustration,
+	"intelligent-search": IntelligentSearch,
+	"one-click-bookmark": OneClickBookmark,
+	"share-bookmarks": ShareBookmarks,
+	"bg-dots": BgDots,
 	arrow: Arrow,
-	"arrow-rounded": ArrowRounded,
-	chevron: Chevron,
-	"chevron-rounded": ChevronRounded,
-	"circle-arrow": CircleArrow,
-	"circle-arrow-rounded": CircleArrowRounded,
-	"diagonal-arrow": DiagonalArrow,
-	"diagonal-arrow-rounded": DiagonalArrowRounded,
-	discord: Discord,
+	bookmark: Bookmark,
+	chrome: Chrome,
+	close: Close,
+	error: Error,
 	facebook: Facebook,
-	"frontend-mentor": FrontendMentor,
-	github: Github,
-	instagram: Instagram,
-	linkedin: Linkedin,
-	mail: Mail,
-	messenger: Messenger,
-	phone: Phone,
-	pinterest: Pinterest,
-	reddit: Reddit,
-	smartphone: Smartphone,
-	snapchat: Snapchat,
-	spotify: Spotify,
-	twitch: Twitch,
-	whatsapp: Whatsapp,
-	x: X,
-	youtube: Youtube
+	firefox: Firefox,
+	hamburger: Hamburger,
+	opera: Opera,
+	twitter: Twitter
 }
 
 const IconComponent = iconMap[name]
@@ -85,5 +63,10 @@ const IconComponent = iconMap[name]
 		width: var(--iconSize);
 		height: var(--iconSize);
 		transform: rotate(var(--rotation));
+
+		&--asset {
+			width: 100%;
+			height: auto;
+		}
 	}
 </style>
