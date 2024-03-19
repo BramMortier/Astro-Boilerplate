@@ -1,14 +1,13 @@
 ---
 interface Props {
 	class?: string
-	Tag?: string
 	cols?: number
 }
 
-const { class: className, Tag = "section", cols } = Astro.props
+const { class: className, cols } = Astro.props
 ---
 
-<Tag
+<section
 	class:list={[
 		"c-container",
 		{ "c-container--layout-grid": cols },
@@ -18,7 +17,7 @@ const { class: className, Tag = "section", cols } = Astro.props
 	<div class="c-container__content">
 		<slot />
 	</div>
-</Tag>
+</section>
 
 <style is:global lang="scss" define:vars={{ cols: cols }}>
 	.c-container {

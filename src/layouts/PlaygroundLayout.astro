@@ -1,7 +1,7 @@
 ---
 import "../styles/index.scss"
 
-import { Filters } from "@pages/playground/blocks/index"
+import { FiltersBlock } from "@blocks/playground/index"
 
 interface Props {
 	title: string
@@ -30,7 +30,7 @@ const { title, description } = Astro.props
 		</main>
 
 		<aside>
-			<Filters />
+			<FiltersBlock />
 		</aside>
 	</body>
 </html>

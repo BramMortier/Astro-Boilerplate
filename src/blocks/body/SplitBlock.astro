@@ -5,16 +5,17 @@ interface Props {
 	title: string
 	text: string
 	image: ImageMetadata
+	position?: string
 	class?: string
 }
 
-const { class: className, title, text, image } = Astro.props
+const { class: className, title, text, image, position } = Astro.props
 ---
 
 <div class:list={["split", className]}>
 	<Title text={title} Tag="h3" />
 
-	<Split text={text} image={image} />
+	<Split text={text} image={image} position={position} />
 </div>
 
 <style is:global lang="scss">

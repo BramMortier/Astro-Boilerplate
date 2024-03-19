@@ -1,7 +1,7 @@
 ---
 import "../styles/index.scss"
 
-import { Header } from "@blocks/index"
+import { FooterPartial, HeaderPartial } from "@blocks/partials/index"
 import { Container } from "@components/index"
 
 interface Props {
@@ -26,13 +26,17 @@ const { title, description } = Astro.props
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
 	<body class="base-layout scheme-default">
-		<Container Tag="header">
-			<Header />
+		<Container class="scheme-dark">
+			<HeaderPartial />
 		</Container>
 
 		<main>
 			<slot />
 		</main>
+
+		<Container>
+			<FooterPartial />
+		</Container>
 	</body>
 </html>
 
