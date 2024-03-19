@@ -1,5 +1,5 @@
 ---
-import { BaseLink, BaseSocialLink } from "@components/index"
+import { Link, SocialLink } from "@components/index"
 
 interface Props {
 	class?: string
@@ -12,23 +12,31 @@ const { class: className, navLinks, socialLinks } = Astro.props
 
 <nav class:list={["c-navigation", className]}>
 	<ul class="c-navigation__links">
-		{navLinks.map(link => (
-			<li class="c-navigation__link">
-				<BaseLink href={link.href}>{link.text}</BaseLink>
-			</li>
-		))}
+		{
+			navLinks.map((link) => (
+				<li class="c-navigation__link">
+					<Link href={link.href}>{link.text}</Link>
+				</li>
+			))
+		}
 	</ul>
 
 	<ul class="c-navigation__social-links">
-		{socialLinks.map(link => (
-			<li class="c-navigation__social-link">
-				<BaseSocialLink href={link.href} icon={link.icon} iconSize={20} />
-			</li>
-		))}
+		{
+			socialLinks.map((link) => (
+				<li class="c-navigation__social-link">
+					<SocialLink
+						href={link.href}
+						icon={link.icon}
+						iconSize={20}
+					/>
+				</li>
+			))
+		}
 	</ul>
 </nav>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.c-navigation {
 		display: flex;
 		align-items: center;

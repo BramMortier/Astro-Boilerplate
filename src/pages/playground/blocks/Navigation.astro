@@ -1,24 +1,27 @@
 ---
-import { socials } from "@config/global/socials";
-import { navigation } from "@config/global/navigation";
-import { BaseTitle, BaseNavigation } from "@components/index";
+import { socials } from "@config/global/socials"
+import { navigation } from "@config/global/navigation"
+import { Title, Navigation } from "@components/index"
 
 interface Props {
-    class?: string
+	class?: string
 }
 
 const { class: className } = Astro.props
 ---
 
-<section id="playground-navigation" class:list={["playground-navigation", className]}>
-    <BaseTitle text="Navigation" Tag="h4" />
+<section
+	id="playground-navigation"
+	class:list={["playground-navigation", className]}
+>
+	<Title text="Navigation" Tag="h4" />
 
-    <div class="playground-navigation__content">
-        <BaseNavigation navLinks={navigation.links} socialLinks={socials.links}/>
-    </div>
+	<div class="playground-navigation__content">
+		<Navigation navLinks={navigation.links} socialLinks={socials.links} />
+	</div>
 </section>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.playground-navigation {
 		--playground-bg: var(--scheme-base);
 		--playground-border: var(--scheme-accent);
@@ -37,5 +40,5 @@ const { class: className } = Astro.props
 			flex-direction: column;
 			gap: var(--space-16);
 		}
-    }
+	}
 </style>

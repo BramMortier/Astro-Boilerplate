@@ -1,7 +1,7 @@
 ---
 import { socials } from "@config/global/socials"
 import { navigation } from "@config/global/navigation"
-import { BaseNavigation, BaseImage } from "@components/index"
+import { Navigation, Image } from "@components/index"
 
 interface Props {
 	class?: string
@@ -11,17 +11,17 @@ const { class: className } = Astro.props
 ---
 
 <header class:list={["header", className]}>
-	<BaseImage
+	<Image
 		src={navigation.logo}
 		class="c-picture--cover"
 		alt={`Site logo`}
 		sizes={`(max-width: 768px) 100vw, 20vw`}
 	/>
 
-	<BaseNavigation navLinks={navigation.links} socialLinks={socials.links} />
+	<Navigation navLinks={navigation.links} socialLinks={socials.links} />
 </header>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.header {
 		display: flex;
 		justify-content: space-between;

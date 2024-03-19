@@ -12,7 +12,7 @@ const { text, Tag = "p", class: className } = Astro.props
 	{text}
 </Tag>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.c-text {
 		--text-color: var(--scheme-contrast);
 

@@ -1,5 +1,5 @@
 ---
-import { BaseTitle, BaseText, BaseCard } from "@components/index"
+import { Title, Text, Card } from "@components/index"
 
 interface Props {
 	title: string
@@ -13,14 +13,14 @@ const { class: className, title, text, items } = Astro.props
 
 <div class:list={["cards", className]}>
 	<div class="cards__intro">
-		<BaseTitle text={title} Tag="h3" />
-		<BaseText text={text} />
+		<Title text={title} Tag="h3" />
+		<Text text={text} />
 	</div>
 
 	<div class="cards__list">
 		{
 			items.map((item) => (
-				<BaseCard
+				<Card
 					class="cards__list-item"
 					image={item.image}
 					text={item.text}

@@ -1,5 +1,5 @@
 ---
-import { BaseSplit, BaseTitle, BaseIcon, BaseButton } from "@components/index"
+import { Split, Title, Icon, Button } from "@components/index"
 
 import { example5_4 } from "@assets/images/placeholders/index"
 
@@ -11,37 +11,37 @@ const { class: className } = Astro.props
 ---
 
 <section id="playground-splits" class:list={["playground-splits", className]}>
-	<BaseTitle text="Splits" Tag="h4" />
+	<Title text="Splits" Tag="h4" />
 
 	<div class="playground-splits__content">
 		<div class="playground-splits__splits">
-			<BaseSplit
+			<Split
 				position="reversed"
 				title="This is a split"
 				text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus error tempora voluptas optio voluptatum quisquam nam, explicabo perspiciatis unde consectetur dolorum eveniet, laborum maxime suscipit rem voluptates sequi, facere asperiores."
 				image={example5_4}
 			>
-				<BaseButton slot="cta">
+				<Button slot="cta">
 					Get to know us
-					<BaseIcon name="chevron" size={12} />
-				</BaseButton>
-				<BaseButton slot="cta" class="c-button--secondary">
+					<Icon name="chevron" size={12} />
+				</Button>
+				<Button slot="cta" class="c-button--secondary">
 					See more cases
-					<BaseIcon name="chevron" size={12} />
-				</BaseButton>
-			</BaseSplit>
+					<Icon name="chevron" size={12} />
+				</Button>
+			</Split>
 
-			<BaseSplit
+			<Split
 				text="Possimus error tempora voluptas optio voluptatum quisquam nam, explicabo perspiciatis unde consectetur dolorum eveniet, laborum maxime suscipit rem voluptates sequi, facere asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo id qui illum repellendus a praesentium culpa beatae impedit obcaecati vitae."
 				image={example5_4}
 			>
-				<BaseButton slot="cta">Discover our options</BaseButton>
-			</BaseSplit>
+				<Button slot="cta">Discover our options</Button>
+			</Split>
 		</div>
 	</div>
 </section>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.playground-splits {
 		--playground-bg: var(--scheme-base);
 		--playground-border: var(--scheme-accent);

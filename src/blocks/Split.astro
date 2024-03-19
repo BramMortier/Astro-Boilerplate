@@ -1,5 +1,5 @@
 ---
-import { BaseTitle, BaseSplit } from "@components/index"
+import { Title, Split } from "@components/index"
 
 interface Props {
 	title: string
@@ -12,12 +12,12 @@ const { class: className, title, text, image } = Astro.props
 ---
 
 <div class:list={["split", className]}>
-	<BaseTitle text={title} Tag="h3" />
+	<Title text={title} Tag="h3" />
 
-	<BaseSplit text={text} image={image} />
+	<Split text={text} image={image} />
 </div>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.split {
 		padding-block: var(--space-64);
 		display: flex;

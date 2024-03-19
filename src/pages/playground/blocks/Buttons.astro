@@ -1,5 +1,5 @@
 ---
-import { BaseTitle, BaseIcon, BaseButton } from "@components/index"
+import { Title, Icon, Button } from "@components/index"
 
 interface Props {
 	class?: string
@@ -9,42 +9,42 @@ const { class: className } = Astro.props
 ---
 
 <section id="playground-buttons" class:list={["playground-buttons", className]}>
-	<BaseTitle text="Buttons" Tag="h4" />
+	<Title text="Buttons" Tag="h4" />
 
 	<div class="playground-buttons__content">
 		<div class="playground-buttons__basic">
-			<BaseButton>Primary button</BaseButton>
-			<BaseButton class="c-button--secondary">Secondary button</BaseButton>
-			<BaseButton class="c-button--secondary" disabled>Disabled</BaseButton>
-			<BaseButton class="c-button--tertiary">Tertiary button</BaseButton>
+			<Button>Primary button</Button>
+			<Button class="c-button--secondary">Secondary button</Button>
+			<Button class="c-button--secondary" disabled>Disabled</Button>
+			<Button class="c-button--tertiary">Tertiary button</Button>
 		</div>
 
 		<div class="playground-buttons__complex">
-			<BaseButton>
+			<Button>
 				Next page
-				<BaseIcon name="arrow" />
-			</BaseButton>
+				<Icon name="arrow" />
+			</Button>
 
-			<BaseButton class="c-button--secondary">
+			<Button class="c-button--secondary">
 				Continue
-				<BaseIcon name="chevron" size={12} />
-			</BaseButton>
+				<Icon name="chevron" size={12} />
+			</Button>
 
-			<BaseButton class="c-button--secondary" disabled>
+			<Button class="c-button--secondary" disabled>
 				Send message
-				<BaseIcon name="arrow" />
-			</BaseButton>
+				<Icon name="arrow" />
+			</Button>
 
-			<BaseButton class="c-button--tertiary">
-				<BaseIcon name="chevron" rotation={180} size={12} />
+			<Button class="c-button--tertiary">
+				<Icon name="chevron" rotation={180} size={12} />
 				Navigate
-				<BaseIcon name="chevron" size={12} />
-			</BaseButton>
+				<Icon name="chevron" size={12} />
+			</Button>
 		</div>
 	</div>
 </section>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.playground-buttons {
 		--playground-bg: var(--scheme-base);
 		--playground-border: var(--scheme-accent);

@@ -1,5 +1,5 @@
 ---
-import { BaseIcon } from "@components/index"
+import { Icon } from "@components/index"
 
 interface Props {
 	icon: string
@@ -12,10 +12,10 @@ const { class: className, href, icon, iconSize } = Astro.props
 ---
 
 <a href={href} class:list={["c-social-link", className]}>
-	<BaseIcon name={icon} size={iconSize} />
+	<Icon name={icon} size={iconSize} />
 </a>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.c-social-link {
 		--social-link-color: var(--scheme-base);
 		--social-link-bg: var(--scheme-contrast);

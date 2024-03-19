@@ -1,5 +1,5 @@
 ---
-import { BaseTitle, BaseIcon } from "@components/index"
+import { Title, Icon } from "@components/index"
 
 interface Props {
 	class?: string
@@ -9,89 +9,89 @@ const { class: className } = Astro.props
 ---
 
 <section id="playground-icons" class:list={["playground-icons", className]}>
-	<BaseTitle text="Icons & graphics" Tag="h4" />
+	<Title text="Icons & graphics" Tag="h4" />
 
 	<div class="playground-icons__content">
 		<div class="playground-icons__group">
-			<BaseIcon name="arrow" size={24} />
-			<BaseIcon name="arrow" size={24} rotation={90} />
-			<BaseIcon name="arrow" size={24} rotation={180} />
-			<BaseIcon name="arrow" size={24} rotation={270} />
+			<Icon name="arrow" size={24} />
+			<Icon name="arrow" size={24} rotation={90} />
+			<Icon name="arrow" size={24} rotation={180} />
+			<Icon name="arrow" size={24} rotation={270} />
 		</div>
 
 		<div class="playground-icons__group">
-			<BaseIcon name="chevron" size={24} />
-			<BaseIcon name="chevron" size={24} rotation={90} />
-			<BaseIcon name="chevron" size={24} rotation={180} />
-			<BaseIcon name="chevron" size={24} rotation={270} />
+			<Icon name="chevron" size={24} />
+			<Icon name="chevron" size={24} rotation={90} />
+			<Icon name="chevron" size={24} rotation={180} />
+			<Icon name="chevron" size={24} rotation={270} />
 		</div>
 
 		<div class="playground-icons__group">
-			<BaseIcon name="arrow-rounded" size={24} />
-			<BaseIcon name="arrow-rounded" size={24} rotation={90} />
-			<BaseIcon name="arrow-rounded" size={24} rotation={180} />
-			<BaseIcon name="arrow-rounded" size={24} rotation={270} />
+			<Icon name="arrow-rounded" size={24} />
+			<Icon name="arrow-rounded" size={24} rotation={90} />
+			<Icon name="arrow-rounded" size={24} rotation={180} />
+			<Icon name="arrow-rounded" size={24} rotation={270} />
 		</div>
 
 		<div class="playground-icons__group">
-			<BaseIcon name="chevron-rounded" size={24} />
-			<BaseIcon name="chevron-rounded" size={24} rotation={90} />
-			<BaseIcon name="chevron-rounded" size={24} rotation={180} />
-			<BaseIcon name="chevron-rounded" size={24} rotation={270} />
+			<Icon name="chevron-rounded" size={24} />
+			<Icon name="chevron-rounded" size={24} rotation={90} />
+			<Icon name="chevron-rounded" size={24} rotation={180} />
+			<Icon name="chevron-rounded" size={24} rotation={270} />
 		</div>
 
 		<div class="playground-icons__group">
-			<BaseIcon name="circle-arrow" size={24} />
-			<BaseIcon name="circle-arrow" size={24} rotation={90} />
-			<BaseIcon name="circle-arrow" size={24} rotation={180} />
-			<BaseIcon name="circle-arrow" size={24} rotation={270} />
+			<Icon name="circle-arrow" size={24} />
+			<Icon name="circle-arrow" size={24} rotation={90} />
+			<Icon name="circle-arrow" size={24} rotation={180} />
+			<Icon name="circle-arrow" size={24} rotation={270} />
 		</div>
 
 		<div class="playground-icons__group">
-			<BaseIcon name="circle-arrow-rounded" size={24} />
-			<BaseIcon name="circle-arrow-rounded" size={24} rotation={90} />
-			<BaseIcon name="circle-arrow-rounded" size={24} rotation={180} />
-			<BaseIcon name="circle-arrow-rounded" size={24} rotation={270} />
+			<Icon name="circle-arrow-rounded" size={24} />
+			<Icon name="circle-arrow-rounded" size={24} rotation={90} />
+			<Icon name="circle-arrow-rounded" size={24} rotation={180} />
+			<Icon name="circle-arrow-rounded" size={24} rotation={270} />
 		</div>
 
 		<div class="playground-icons__group">
-			<BaseIcon name="diagonal-arrow" size={24} />
-			<BaseIcon name="diagonal-arrow" size={24} rotation={90} />
-			<BaseIcon name="diagonal-arrow" size={24} rotation={180} />
-			<BaseIcon name="diagonal-arrow" size={24} rotation={270} />
+			<Icon name="diagonal-arrow" size={24} />
+			<Icon name="diagonal-arrow" size={24} rotation={90} />
+			<Icon name="diagonal-arrow" size={24} rotation={180} />
+			<Icon name="diagonal-arrow" size={24} rotation={270} />
 		</div>
 
 		<div class="playground-icons__group">
-			<BaseIcon name="diagonal-arrow-rounded" size={24} />
-			<BaseIcon name="diagonal-arrow-rounded" size={24} rotation={90} />
-			<BaseIcon name="diagonal-arrow-rounded" size={24} rotation={180} />
-			<BaseIcon name="diagonal-arrow-rounded" size={24} rotation={270} />
+			<Icon name="diagonal-arrow-rounded" size={24} />
+			<Icon name="diagonal-arrow-rounded" size={24} rotation={90} />
+			<Icon name="diagonal-arrow-rounded" size={24} rotation={180} />
+			<Icon name="diagonal-arrow-rounded" size={24} rotation={270} />
 		</div>
 
 		<div class="playground-icons__group">
-			<BaseIcon name="discord" size={24} />
-			<BaseIcon name="facebook" size={24} />
-			<BaseIcon name="frontend-mentor" size={24} />
-			<BaseIcon name="github" size={24} />
-			<BaseIcon name="instagram" size={24} />
-			<BaseIcon name="linkedin" size={24} />
-			<BaseIcon name="mail" size={24} />
-			<BaseIcon name="messenger" size={24} />
-			<BaseIcon name="phone" size={24} />
-			<BaseIcon name="pinterest" size={24} />
-			<BaseIcon name="reddit" size={24} />
-			<BaseIcon name="smartphone" size={24} />
-			<BaseIcon name="snapchat" size={24} />
-			<BaseIcon name="spotify" size={24} />
-			<BaseIcon name="twitch" size={24} />
-			<BaseIcon name="whatsapp" size={24} />
-			<BaseIcon name="x" size={24} />
-			<BaseIcon name="youtube" size={24} />
+			<Icon name="discord" size={24} />
+			<Icon name="facebook" size={24} />
+			<Icon name="frontend-mentor" size={24} />
+			<Icon name="github" size={24} />
+			<Icon name="instagram" size={24} />
+			<Icon name="linkedin" size={24} />
+			<Icon name="mail" size={24} />
+			<Icon name="messenger" size={24} />
+			<Icon name="phone" size={24} />
+			<Icon name="pinterest" size={24} />
+			<Icon name="reddit" size={24} />
+			<Icon name="smartphone" size={24} />
+			<Icon name="snapchat" size={24} />
+			<Icon name="spotify" size={24} />
+			<Icon name="twitch" size={24} />
+			<Icon name="whatsapp" size={24} />
+			<Icon name="x" size={24} />
+			<Icon name="youtube" size={24} />
 		</div>
 	</div>
 </section>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.playground-icons {
 		--playground-bg: var(--scheme-base);
 		--playground-border: var(--scheme-accent);

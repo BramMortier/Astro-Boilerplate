@@ -1,5 +1,5 @@
 ---
-import { BaseImage, BaseTitle, BaseText } from "@components/index"
+import { Image, Title, Text } from "@components/index"
 
 interface Props {
 	title?: string
@@ -9,18 +9,30 @@ interface Props {
 	class?: string
 }
 
-const { title, text, image, position = "default", class: className } = Astro.props
+const {
+	title,
+	text,
+	image,
+	position = "default",
+	class: className
+} = Astro.props
 ---
 
-<article class:list={["c-split", { "c-split--reversed": position === "reversed" }, className]}>
+<article
+	class:list={[
+		"c-split",
+		{ "c-split--reversed": position === "reversed" },
+		className
+	]}
+>
 	<div class="c-split__left">
-		{title && <BaseTitle Tag="h4" text={title} />}
-		<BaseText text={text} />
+		{title && <Title Tag="h4" text={title} />}
+		<Text text={text} />
 		<slot name="cta" />
 	</div>
 
 	<div class="c-split__right">
-		<BaseImage
+		<Image
 			src={image}
 			class="c-picture--cover"
 			alt="split image"
@@ -29,7 +41,7 @@ const { title, text, image, position = "default", class: className } = Astro.pro
 	</div>
 </article>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.c-split {
 		--split-bg: transparent;
 
@@ -46,6 +58,9 @@ const { title, text, image, position = "default", class: className } = Astro.pro
 		}
 
 		.c-picture {
+			height: 100%;
+			width: 100%;
+
 			&__image {
 				height: 100%;
 			}

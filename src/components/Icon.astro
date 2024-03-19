@@ -73,7 +73,11 @@ const IconComponent = iconMap[name]
 	<IconComponent />
 </div>
 
-<style scoped lang="scss" define:vars={{ iconSize: `${size}px`, rotation: `${rotation}deg` }}>
+<style
+	is:global
+	lang="scss"
+	define:vars={{ iconSize: `${size}px`, rotation: `${rotation}deg` }}
+>
 	.c-icon {
 		display: flex;
 		justify-self: center;

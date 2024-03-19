@@ -1,5 +1,5 @@
 ---
-import { BaseImage, BaseTitle, BaseText } from "@components/index"
+import { Image, Title, Text } from "@components/index"
 import {
 	buttons,
 	typography,
@@ -29,7 +29,11 @@ const playgroundBlocks = [
 	{ graphic: cards, name: "Cards", id: "playground-cards" },
 	{ graphic: splits, name: "Splits", id: "playground-splits" },
 	{ graphic: cta, name: "Call To Actions", id: "playground-cta" },
-	{ graphic: dropdownMenus, name: "Dropdown Menus", id: "playground-dropdowns" },
+	{
+		graphic: dropdownMenus,
+		name: "Dropdown Menus",
+		id: "playground-dropdowns"
+	},
 	{ graphic: inputs, name: "Inputs", id: "playground-inputs" },
 	{ graphic: checkboxes, name: "Checkboxes", id: "playground-checkboxes" }
 ]
@@ -75,27 +79,27 @@ const playgroundBlocks = [
 </script>
 
 <section class="playground-filters">
-	<BaseTitle text="Available components" Tag="h4" />
+	<Title text="Available components" Tag="h4" />
 
 	<div class="playground-filters__options">
 		{
 			playgroundBlocks.map((block) => (
 				<div class="playground-filters__option" data-id={block.id}>
-					<BaseImage
+					<Image
 						src={block.graphic}
 						class="c-picture--cover"
 						alt="This is the first example image"
 						sizes={`(max-width: 768px) 100vw, 33vw`}
 					/>
 
-					<BaseText text={block.name} />
+					<Text text={block.name} />
 				</div>
 			))
 		}
 	</div>
 </section>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.playground-filters {
 		display: flex;
 		flex-direction: column;

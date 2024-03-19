@@ -13,7 +13,7 @@ const { href, class: className } = Astro.props
 	<slot />
 </a>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.c-link {
 		--link-color: var(--scheme-contrast);
 		--link-underline-color: var(--scheme-contrast);

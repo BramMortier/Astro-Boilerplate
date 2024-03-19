@@ -13,7 +13,7 @@ const { number, label, class: className } = Astro.props
 	{label && <p class="c-number__label typo-label">{label}</p>}
 </div>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.c-number {
 		--number-color: var(--scheme-contrast);
 		--label-color: var(--scheme-contrast);

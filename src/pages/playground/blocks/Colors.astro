@@ -1,5 +1,5 @@
 ---
-import { BaseTitle } from "@components/index"
+import { Title } from "@components/index"
 
 const colorPalette = [
 	[
@@ -21,7 +21,7 @@ const colorPalette = [
 ---
 
 <section id="playground-colors" class="playground-colors">
-	<BaseTitle text="Color palette" Tag="h4" />
+	<Title text="Color palette" Tag="h4" />
 
 	<div class="playground-colors__content">
 		{
@@ -45,7 +45,7 @@ const colorPalette = [
 	</div>
 </section>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.playground-colors {
 		display: flex;
 		gap: var(--space-16);

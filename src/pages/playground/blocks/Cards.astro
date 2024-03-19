@@ -1,5 +1,5 @@
 ---
-import { BaseCard, BaseTitle } from "@components/index"
+import { Card, Title } from "@components/index"
 
 import { example5_4 } from "@assets/images/placeholders/index"
 
@@ -11,43 +11,43 @@ const { class: className } = Astro.props
 ---
 
 <section id="playground-cards" class:list={["playground-cards", className]}>
-	<BaseTitle text="Cards & Splits" Tag="h4" />
+	<Title text="Cards & Splits" Tag="h4" />
 
 	<div class="playground-cards__content">
 		<div class="playground-cards__basic">
-			<BaseCard
+			<Card
 				title="Explanation"
 				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
 			/>
-			<BaseCard
+			<Card
 				title="Our way of working on large projects"
 				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
 				button={{ text: "Read more" }}
 			/>
-			<BaseCard
+			<Card
 				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
 				button={{ text: "Compare options" }}
 			/>
 		</div>
 
 		<div class="playground-cards__complex">
-			<BaseCard
+			<Card
 				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
 				button={{ text: "View locations" }}
 				image={example5_4}
 			/>
-			<BaseCard
+			<Card
 				title="Cozy 2 person Cottage"
 				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
 				button={{ text: "Book a reservation" }}
 				image={example5_4}
 			/>
-			<BaseCard button={{ text: "Case study" }} image={example5_4} />
+			<Card button={{ text: "Case study" }} image={example5_4} />
 		</div>
 	</div>
 </section>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.playground-cards {
 		--playground-bg: var(--scheme-base);
 		--playground-border: var(--scheme-accent);

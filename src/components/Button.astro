@@ -12,7 +12,7 @@ const { class: className, ...props } = Astro.props
 	<slot />
 </button>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.c-button {
 		--button-bg: var(--scheme-contrast);
 		--button-color: var(--scheme-base);

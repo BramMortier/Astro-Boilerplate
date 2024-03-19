@@ -1,27 +1,27 @@
 ---
 import "../styles/index.scss"
 
-import { BaseLayout } from "@layouts/index"
+import { DefaultLayout } from "@layouts/index"
 import { content } from "@config/pages/homepage"
 
 import { Cards, Split } from "@blocks/index"
-import { BaseContainer } from "@components/index"
+import { Container } from "@components/index"
 ---
 
-<BaseLayout title="Homepage" description="This is a page">
-	<BaseContainer cols={12}>
+<DefaultLayout title="Homepage" description="This is a page">
+	<Container cols={12}>
 		<Cards
 			title={content.cards.title}
 			text={content.cards.text}
 			items={content.cards.items}
 		/>
-	</BaseContainer>
+	</Container>
 
-	<BaseContainer>
+	<Container>
 		<Split
 			title={content.split.title}
 			text={content.split.text}
 			image={content.split.image}
 		/>
-	</BaseContainer>
-</BaseLayout>
+	</Container>
+</DefaultLayout>

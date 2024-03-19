@@ -1,5 +1,5 @@
 ---
-import { BaseImage, BaseTitle, BaseText, BaseButton } from "@components/index"
+import { Image, Title, Text, Button } from "@components/index"
 
 interface Props {
 	image?: ImageMetadata
@@ -15,7 +15,7 @@ const { title, text, button, image, class: className } = Astro.props
 <article class:list={["c-card", className]}>
 	{
 		image && (
-			<BaseImage
+			<Image
 				src={image}
 				alt="alt text"
 				class="c-picture--cover"
@@ -24,14 +24,14 @@ const { title, text, button, image, class: className } = Astro.props
 		)
 	}
 
-	{title && <BaseTitle text={title} Tag="h4" />}
+	{title && <Title text={title} Tag="h4" />}
 
-	{text && <BaseText text={text} />}
+	{text && <Text text={text} />}
 
-	{button && <BaseButton>{button.text}</BaseButton>}
+	{button && <Button>{button.text}</Button>}
 </article>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.c-card {
 		--card-bg: transparent;
 		--card-border: var(--scheme-contrast);

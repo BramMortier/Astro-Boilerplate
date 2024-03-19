@@ -1,5 +1,5 @@
 ---
-import { BaseImage, BaseTitle } from "@components/index"
+import { Image, Title } from "@components/index"
 
 import {
 	example1_1,
@@ -15,17 +15,23 @@ interface Props {
 
 const { class: className } = Astro.props
 
-const exampleImages = [example1_1, example4_5, example5_4, example9_16, example16_9]
+const exampleImages = [
+	example1_1,
+	example4_5,
+	example5_4,
+	example9_16,
+	example16_9
+]
 ---
 
 <section id="playground-media" class:list={["playground-media", className]}>
-	<BaseTitle text="Media" Tag="h4" />
+	<Title text="Media" Tag="h4" />
 
 	<div class="playground-media__content">
 		<div class="playground-media__images">
 			{
 				exampleImages.map((img, index) => (
-					<BaseImage
+					<Image
 						src={img}
 						class="c-picture--cover"
 						alt={`This is example image ${index}`}
@@ -37,7 +43,7 @@ const exampleImages = [example1_1, example4_5, example5_4, example9_16, example1
 	</div>
 </section>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.playground-media {
 		--playground-bg: var(--scheme-base);
 		--playground-border: var(--scheme-accent);

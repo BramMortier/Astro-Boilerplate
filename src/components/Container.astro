@@ -20,7 +20,7 @@ const { class: className, Tag = "section", cols } = Astro.props
 	</div>
 </Tag>
 
-<style scoped lang="scss" define:vars={{ cols: cols }}>
+<style is:global lang="scss" define:vars={{ cols: cols }}>
 	.c-container {
 		--container-width: minmax(0, var(--container-default-width));
 		--container-bound-l: var(--container-default-bound-l);

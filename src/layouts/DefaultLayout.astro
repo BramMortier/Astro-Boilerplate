@@ -2,7 +2,7 @@
 import "../styles/index.scss"
 
 import { Header } from "@blocks/index"
-import { BaseContainer } from "@components/index"
+import { Container } from "@components/index"
 
 interface Props {
 	title: string
@@ -26,9 +26,9 @@ const { title, description } = Astro.props
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
 	<body class="base-layout scheme-default">
-		<BaseContainer>
+		<Container Tag="header">
 			<Header />
-		</BaseContainer>
+		</Container>
 
 		<main>
 			<slot />
@@ -36,7 +36,7 @@ const { title, description } = Astro.props
 	</body>
 </html>
 
-<style scoped lang="scss">
+<style is:global lang="scss">
 	.base-layout {
 		display: flex;
 		flex-direction: column;
