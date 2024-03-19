@@ -9,36 +9,19 @@ const { class: className } = Astro.props
 ---
 
 <section id="playground-links" class:list={["playground-links", className]}>
-	<Title text="Links" Tag="h4" />
+	<Title text="Links" Tag="h2" />
 
 	<div class="playground-links__content">
-		<div class="playground-links__normal">
-			<Link href="#">Link</Link>
-			<Link href="#">About us</Link>
-			<Link href="#">
-				View options
-				<Icon name="chevron" size={12} />
-			</Link>
-			<Link href="#">
-				Next page
-				<Icon name="arrow" />
-			</Link>
-		</div>
+		<div class="playground-links__normal"></div>
 
-		<div class="playground-links__social">
-			<SocialLink href="#" icon="linkedin" iconSize={20} />
-			<SocialLink href="#" icon="instagram" iconSize={20} />
-			<SocialLink href="#" icon="facebook" iconSize={20} />
-			<SocialLink href="#" icon="github" iconSize={20} />
-			<SocialLink href="#" icon="reddit" iconSize={20} />
-		</div>
+		<div class="playground-links__social"></div>
 	</div>
 </section>
 
 <style is:global lang="scss">
 	.playground-links {
 		--playground-bg: var(--scheme-base);
-		--playground-border: var(--scheme-accent);
+		--playground-border: var(--scheme-subtle);
 
 		background-color: var(--playground-bg);
 		border: 1px solid var(--playground-border);

@@ -14,30 +14,44 @@ const { class: className, ...props } = Astro.props
 
 <style is:global lang="scss">
 	.c-button {
-		--button-bg: var(--scheme-contrast);
-		--button-color: var(--scheme-base);
-		--button-border: var(--scheme-contrast);
+		--button-bg: var(--scheme-accent);
+		--button-color: var(--clr-white);
+		--button-border: var(--scheme-accent);
 
 		background-color: var(--button-bg);
 		color: var(--button-color);
-		border: 1px solid var(--button-border);
+		border: 2px solid var(--button-border);
 
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: var(--space-12);
 
-		font-family: var(--font-secondary);
+		font-family: var(--font-primary);
 		font-size: var(--fs-16);
+		font-weight: var(--fw-500);
 		outline: none;
-		padding-inline: var(--space-16);
+		padding-inline: var(--space-32);
+		border-radius: var(--border-radius-5);
 		height: 2.5rem;
 		transition: all ease 0.2s;
 
-		&--secondary {
+		&:hover {
 			--button-bg: transparent;
-			--button-color: var(--scheme-contrast);
-			--button-border: var(--scheme-contrast);
+			--button-color: var(--scheme-accent);
+			--button-color: var(--scheme-accent);
+		}
+
+		&--secondary {
+			--button-bg: var(--scheme-accent-alt);
+			--button-color: var(--clr-white);
+			--button-border: var(--scheme-accent-alt);
+
+			&:hover {
+				--button-bg: transparent;
+				--button-color: var(--scheme-accent-alt);
+				--button-color: var(--scheme-accent-alt);
+			}
 		}
 
 		&--tertiary {

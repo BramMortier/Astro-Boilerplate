@@ -11,46 +11,19 @@ const { class: className } = Astro.props
 ---
 
 <section id="playground-cards" class:list={["playground-cards", className]}>
-	<Title text="Cards & Splits" Tag="h4" />
+	<Title text="Cards & Splits" Tag="h2" />
 
 	<div class="playground-cards__content">
-		<div class="playground-cards__basic">
-			<Card
-				title="Explanation"
-				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-			/>
-			<Card
-				title="Our way of working on large projects"
-				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-				button={{ text: "Read more" }}
-			/>
-			<Card
-				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-				button={{ text: "Compare options" }}
-			/>
-		</div>
+		<div class="playground-cards__basic"></div>
 
-		<div class="playground-cards__complex">
-			<Card
-				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-				button={{ text: "View locations" }}
-				image={example5_4}
-			/>
-			<Card
-				title="Cozy 2 person Cottage"
-				text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum quae distinctio cum aspernatur pariatur, quam consequatur itaque earum amet assumenda?"
-				button={{ text: "Book a reservation" }}
-				image={example5_4}
-			/>
-			<Card button={{ text: "Case study" }} image={example5_4} />
-		</div>
+		<div class="playground-cards__complex"></div>
 	</div>
 </section>
 
 <style is:global lang="scss">
 	.playground-cards {
 		--playground-bg: var(--scheme-base);
-		--playground-border: var(--scheme-accent);
+		--playground-border: var(--scheme-subtle);
 
 		background-color: var(--playground-bg);
 		border: 1px solid var(--playground-border);

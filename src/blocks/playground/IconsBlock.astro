@@ -9,84 +9,21 @@ const { class: className } = Astro.props
 ---
 
 <section id="playground-icons" class:list={["playground-icons", className]}>
-	<Title text="Icons & graphics" Tag="h4" />
+	<Title text="Icons & graphics" Tag="h2" />
 
 	<div class="playground-icons__content">
 		<div class="playground-icons__group">
+			<Icon name="opera" size={48} />
+			<Icon name="chrome" size={48} />
+			<Icon name="firefox" size={48} />
+
 			<Icon name="arrow" size={24} />
-			<Icon name="arrow" size={24} rotation={90} />
-			<Icon name="arrow" size={24} rotation={180} />
-			<Icon name="arrow" size={24} rotation={270} />
-		</div>
-
-		<div class="playground-icons__group">
-			<Icon name="chevron" size={24} />
-			<Icon name="chevron" size={24} rotation={90} />
-			<Icon name="chevron" size={24} rotation={180} />
-			<Icon name="chevron" size={24} rotation={270} />
-		</div>
-
-		<div class="playground-icons__group">
-			<Icon name="arrow-rounded" size={24} />
-			<Icon name="arrow-rounded" size={24} rotation={90} />
-			<Icon name="arrow-rounded" size={24} rotation={180} />
-			<Icon name="arrow-rounded" size={24} rotation={270} />
-		</div>
-
-		<div class="playground-icons__group">
-			<Icon name="chevron-rounded" size={24} />
-			<Icon name="chevron-rounded" size={24} rotation={90} />
-			<Icon name="chevron-rounded" size={24} rotation={180} />
-			<Icon name="chevron-rounded" size={24} rotation={270} />
-		</div>
-
-		<div class="playground-icons__group">
-			<Icon name="circle-arrow" size={24} />
-			<Icon name="circle-arrow" size={24} rotation={90} />
-			<Icon name="circle-arrow" size={24} rotation={180} />
-			<Icon name="circle-arrow" size={24} rotation={270} />
-		</div>
-
-		<div class="playground-icons__group">
-			<Icon name="circle-arrow-rounded" size={24} />
-			<Icon name="circle-arrow-rounded" size={24} rotation={90} />
-			<Icon name="circle-arrow-rounded" size={24} rotation={180} />
-			<Icon name="circle-arrow-rounded" size={24} rotation={270} />
-		</div>
-
-		<div class="playground-icons__group">
-			<Icon name="diagonal-arrow" size={24} />
-			<Icon name="diagonal-arrow" size={24} rotation={90} />
-			<Icon name="diagonal-arrow" size={24} rotation={180} />
-			<Icon name="diagonal-arrow" size={24} rotation={270} />
-		</div>
-
-		<div class="playground-icons__group">
-			<Icon name="diagonal-arrow-rounded" size={24} />
-			<Icon name="diagonal-arrow-rounded" size={24} rotation={90} />
-			<Icon name="diagonal-arrow-rounded" size={24} rotation={180} />
-			<Icon name="diagonal-arrow-rounded" size={24} rotation={270} />
-		</div>
-
-		<div class="playground-icons__group">
-			<Icon name="discord" size={24} />
 			<Icon name="facebook" size={24} />
-			<Icon name="frontend-mentor" size={24} />
-			<Icon name="github" size={24} />
-			<Icon name="instagram" size={24} />
-			<Icon name="linkedin" size={24} />
-			<Icon name="mail" size={24} />
-			<Icon name="messenger" size={24} />
-			<Icon name="phone" size={24} />
-			<Icon name="pinterest" size={24} />
-			<Icon name="reddit" size={24} />
-			<Icon name="smartphone" size={24} />
-			<Icon name="snapchat" size={24} />
-			<Icon name="spotify" size={24} />
-			<Icon name="twitch" size={24} />
-			<Icon name="whatsapp" size={24} />
-			<Icon name="x" size={24} />
-			<Icon name="youtube" size={24} />
+			<Icon name="close" size={24} />
+			<Icon name="hamburger" size={24} />
+			<Icon name="twitter" size={24} />
+
+			<Icon name="error" size={24} />
 		</div>
 	</div>
 </section>
@@ -94,7 +31,7 @@ const { class: className } = Astro.props
 <style is:global lang="scss">
 	.playground-icons {
 		--playground-bg: var(--scheme-base);
-		--playground-border: var(--scheme-accent);
+		--playground-border: var(--scheme-subtle);
 		--playground-color: var(--scheme-contrast);
 
 		background-color: var(--playground-bg);

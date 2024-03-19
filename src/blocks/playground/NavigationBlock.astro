@@ -14,7 +14,7 @@ const { class: className } = Astro.props
 	id="playground-navigation"
 	class:list={["playground-navigation", className]}
 >
-	<Title text="Navigation" Tag="h4" />
+	<Title text="Navigation" Tag="h2" />
 
 	<div class="playground-navigation__content">
 		<Navigation navLinks={navigation.links} socialLinks={socials.links} />
@@ -24,7 +24,7 @@ const { class: className } = Astro.props
 <style is:global lang="scss">
 	.playground-navigation {
 		--playground-bg: var(--scheme-base);
-		--playground-border: var(--scheme-accent);
+		--playground-border: var(--scheme-subtle);
 
 		background-color: var(--playground-bg);
 		border: 1px solid var(--playground-border);

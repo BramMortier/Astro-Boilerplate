@@ -14,8 +14,23 @@ const { text, Tag = "p", class: className } = Astro.props
 
 <style is:global lang="scss">
 	.c-text {
-		--text-color: var(--scheme-contrast);
+		--text-color: var(--scheme-subtle);
 
+		font-size: var(--fs-20);
+		font-family: var(--font-primary);
 		color: var(--text-color);
+		font-optical-sizing: auto;
+		font-weight: var(--fw-400);
+		line-height: var(--lh-spacious);
+
+		&--strong {
+			--text-color: var(--scheme-contrast);
+
+			font-size: var(--fs-20);
+			font-family: var(--font-primary);
+			font-optical-sizing: auto;
+			font-weight: var(--fw-400);
+			line-height: var(--lh-spacious);
+		}
 	}
 </style>

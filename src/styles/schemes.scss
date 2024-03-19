@@ -3,12 +3,18 @@
 // ===========================================================================
 .scheme-default {
 	--scheme-base: var(--clr-white);
-	--scheme-contrast: var(--clr-black);
-	--scheme-accent: var(--clr-grey-200);
+	--scheme-contrast: var(--clr-very-dark-blue);
+	--scheme-subtle: var(--clr-grayish-blue);
+
+	--scheme-accent: var(--clr-soft-blue);
+	--scheme-accent-alt: var(--clr-soft-red);
 }
 
 .scheme-dark {
-	--scheme-base: var(--clr-black);
+	--scheme-base: var(--clr-very-dark-blue);
+	--scheme-subtle: var(--clr-grayish-blue);
 	--scheme-contrast: var(--clr-white);
-	--scheme-accent: var(--clr-black);
+
+	--scheme-accent: var(--clr-soft-blue);
+	--scheme-accent-alt: var(--clr-soft-red);
 }

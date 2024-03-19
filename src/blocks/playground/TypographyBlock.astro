@@ -7,14 +7,14 @@ interface Props {
 
 const { class: className } = Astro.props
 
-const headings = ["h1", "h2", "h3", "h4", "h5", "h6"]
+const headings = ["h1", "h2"]
 ---
 
 <section
 	id="playground-typography"
 	class:list={["playground-typography", className]}
 >
-	<Title text="Font & Typography" Tag="h4" />
+	<Title text="Font & Typography" Tag="h2" />
 
 	<div class="playground-typography__content">
 		<div class="playground-typography__headings">
@@ -32,25 +32,13 @@ const headings = ["h1", "h2", "h3", "h4", "h5", "h6"]
 
 		<div class="playground-typography__text">
 			<Text
-				class="typo-p--large"
 				text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, possimus pariatur maiores repellat commodi esse, atque ad delectus, perspiciatis similique facere voluptas. Nostrum, voluptate inventore quia assumenda pariatur perferendis ab sunt dolorem commodi voluptatibus, et atque nam reiciendis porro consequatur laudantium hic labore officiis iste dolorum harum ipsum. Sequi, modi."
 			/>
 
-			<div>
-				<Text
-					text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempore aperiam libero deserunt iste odio aspernatur, nostrum pariatur, quos, molestias corrupti voluptatum deleniti dignissimos. Neque dolores excepturi provident enim quis quasi a voluptas tempora praesentium, reiciendis cupiditate temporibus officiis beatae!"
-				/>
-
-				<Text
-					Tag="i"
-					text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos similique tempora earum commodi fugit quis beatae, asperiores et illo laboriosam expedita tempore dolorem amet sunt nam adipisci a sit incidunt ut distinctio delectus unde maiores! Dolorum odio molestiae fuga repellendus."
-				/>
-
-				<Text
-					Tag="strong"
-					text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, natus autem ducimus dicta repellendus officia laudantium quo pariatur nostrum, perspiciatis deleniti distinctio inventore. Incidunt natus, architecto obcaecati iure temporibus repellendus. Accusamus quia perferendis excepturi nobis consequatur non nulla libero obcaecati."
-				/>
-			</div>
+			<Text
+				class="c-text--strong"
+				text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempore aperiam libero deserunt iste odio aspernatur, nostrum pariatur, quos, molestias corrupti voluptatum deleniti dignissimos. Neque dolores excepturi provident enim quis quasi a voluptas tempora praesentium, reiciendis cupiditate temporibus officiis beatae!"
+			/>
 		</div>
 	</div>
 </section>
@@ -58,7 +46,7 @@ const headings = ["h1", "h2", "h3", "h4", "h5", "h6"]
 <style is:global lang="scss">
 	.playground-typography {
 		--playground-bg: var(--scheme-base);
-		--playground-border: var(--scheme-accent);
+		--playground-border: var(--scheme-subtle);
 
 		background-color: var(--playground-bg);
 		border: 1px solid var(--playground-border);
