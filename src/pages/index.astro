@@ -1,35 +1,36 @@
 ---
-import "../styles/index.scss";
+import "../styles/index.scss"
+
+import { DefaultLayout } from "@layouts/index"
+import { content } from "@config/pages/homepage"
+
+import { CardsBlock, SplitBlock } from "@blocks/body/index"
+import { Container } from "@components/index"
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
-    </head>
-    <body>
-        <main>
+<DefaultLayout title="Homepage" description="This is a page">
+	<Container cols={12} class="scheme-dark">
+		<CardsBlock
+			title={content.cards.title}
+			text={content.cards.text}
+			items={content.cards.items}
+		/>
+	</Container>
 
-        </main>
-    </body>
-</html>
+	<Container>
+		<SplitBlock
+			title={content.split.title}
+			text={content.split.text}
+			image={content.split.image}
+		/>
+	</Container>
 
-<style scoped lang="scss">
-    main {
-        padding: var(--space-16);
-    }
-
-    div {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1rem;
-
-        &.col {
-            flex-direction: column;
-        }
-    }
-</style>
-
+	<Container class="scheme-dark">
+		<SplitBlock
+			title={content.splitReversed.title}
+			text={content.splitReversed.text}
+			image={content.splitReversed.image}
+			position={content.splitReversed.position}
+		/>
+	</Container>
+</DefaultLayout>

@@ -1,0 +1,84 @@
+---
+import { Image, Title, Text } from "@components/index"
+
+interface Props {
+	title?: string
+	text: string
+	image: ImageMetadata
+	position?: string
+	class?: string
+}
+
+const {
+	title,
+	text,
+	image,
+	position = "default",
+	class: className
+} = Astro.props
+---
+
+<article
+	class:list={[
+		"c-split",
+		{ "c-split--reversed": position === "reversed" },
+		className
+	]}
+>
+	<div class="c-split__left">
+		{title && <Title Tag="h4" text={title} />}
+		<Text text={text} />
+		<slot name="cta" />
+	</div>
+
+	<div class="c-split__right">
+		<Image
+			src={image}
+			class="c-picture--cover"
+			alt="split image"
+			sizes={`(max-width: 768px) 100vw, 33vw`}
+		/>
+	</div>
+</article>
+
+<style is:global lang="scss">
+	.c-split {
+		--split-bg: transparent;
+
+		background-color: var(--split-bg);
+
+		display: flex;
+		gap: var(--space-96);
+		min-width: 30rem;
+		max-width: 75rem;
+		width: 100%;
+
+		&--reversed {
+			flex-direction: row-reverse;
+		}
+
+		.c-picture {
+			height: 100%;
+			width: 100%;
+
+			&__image {
+				height: 100%;
+			}
+		}
+
+		&__left {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: var(--space-16);
+			padding: var(--space-16);
+		}
+
+		&__right {
+			width: 50%;
+			display: flex;
+			justify-content: center;
+		}
+	}
+</style>

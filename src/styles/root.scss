@@ -5,76 +5,69 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-    // ===========================================================================
-    // Colors
-    // ===========================================================================
-    --clr-black: hsl(0, 0%, 0%);
-    --clr-white: hsl(0, 0%, 100%);
+	// =========================================================================
+	// Color propreties
+	// =========================================================================
+	--clr-black: hsl(0, 0%, 0%);
+	--clr-white: hsl(0, 0%, 100%);
 
-    --clr-grey-900: hsl(0, 0%, 10%);
-    --clr-grey-800: hsl(0, 0%, 20%);
-    --clr-grey-700: hsl(0, 0%, 30%);
-    --clr-grey-600: hsl(0, 0%, 40%);
-    --clr-grey-500: hsl(0, 0%, 50%);
-    --clr-grey-400: hsl(0, 0%, 60%);
-    --clr-grey-300: hsl(0, 0%, 70%);
-    --clr-grey-200: hsl(0, 0%, 80%);
-    --clr-grey-100: hsl(0, 0%, 90%);
+	--clr-grey-900: hsl(0, 0%, 10%);
+	--clr-grey-800: hsl(0, 0%, 20%);
+	--clr-grey-700: hsl(0, 0%, 30%);
+	--clr-grey-600: hsl(0, 0%, 40%);
+	--clr-grey-500: hsl(0, 0%, 50%);
+	--clr-grey-400: hsl(0, 0%, 60%);
+	--clr-grey-300: hsl(0, 0%, 70%);
+	--clr-grey-200: hsl(0, 0%, 80%);
+	--clr-grey-100: hsl(0, 0%, 90%);
 
-    // ===========================================================================
-    // Typography
-    // ===========================================================================
-    --font-primary: "Open Sans", sans-serif;
-    --font-secondary: "PT Sans", sans-serif;
+	// =========================================================================
+	// Spacing propreties
+	// =========================================================================
+	$spacing-values: (
+		1,
+		4,
+		8,
+		12,
+		16,
+		20,
+		24,
+		32,
+		48,
+		64,
+		80,
+		96,
+		112,
+		128,
+		144,
+		160
+	);
 
-    $font-size-values: (12, 16, 20, 24, 32, 48, 72);
+	@each $value in $spacing-values {
+		--space-#{$value}: #{calc($value / 16)}rem;
+	}
 
-    @each $size in $font-size-values {
-        --fs-#{$size}: #{calc($size / 16)}rem;
-    }
+	// =========================================================================
+	// Extra propreties
+	// =========================================================================
+	$border-radius-values: (3, 5, 10);
 
-    $font-weight-values: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+	@each $value in $border-radius-values {
+		--border-radius-#{$value}: #{$value}px;
+	}
 
-    @each $weight in $font-weight-values {
-        --fw-#{$weight}: #{$weight};
-    }
+	--border-radius-round: 100%;
 
-    $line-height-values: (
-        "none": 1,
-        "tight": 1.2,
-        "narrow": 1.4,
-        "spacious": 1.6,
-        "wide": 1.8,
-        "double": 2,
-    );
+	// =========================================================================
+	// Container propreties
+	// =========================================================================
+	--container-default-width: 62.5rem;
+	--container-default-gap: var(--space-24);
+	--container-default-bound-l: 1.5rem;
+	--container-default-bound-r: 1.5rem;
 
-    @each $key, $value in $line-height-values {
-        --lh-#{$key}: #{$value};
-    }
-
-    $letter-spacing-values: (1, 2, 3, 4, 5);
-
-    @each $value in $letter-spacing-values {
-        --ls-#{$value}: #{$value};
-    }
-
-    // ===========================================================================
-    // Spacing
-    // ===========================================================================
-    $spacing-values: (1, 4, 8, 12, 16, 20, 24, 32, 48, 64, 80, 96, 112, 128, 144, 160);
-
-    @each $value in $spacing-values {
-        --space-#{$value}: #{calc($value / 16)}rem;
-    }
-
-    // ===========================================================================
-    // Extras
-    // ===========================================================================
-    $border-radius-values: (3, 5, 10);
-
-    @each $value in $border-radius-values {
-        --border-radius-#{$value}: #{$value};
-    }
-
-    --border-radius-round: 100%;
+	--container-full-width: 100vw;
+	--container-full-gap: var(--space-24);
+	--container-full-bound-l: 0;
+	--container-full-bound-r: 0;
 }

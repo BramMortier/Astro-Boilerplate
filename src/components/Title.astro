@@ -1,0 +1,21 @@
+---
+interface Props {
+	Tag: string
+	text: string
+	class?: string
+}
+
+const { Tag, text, class: className } = Astro.props
+---
+
+<Tag class:list={["c-title", className]}>
+	{text}
+</Tag>
+
+<style is:global lang="scss">
+	.c-title {
+		--title-color: var(--scheme-contrast);
+
+		color: var(--title-color);
+	}
+</style>

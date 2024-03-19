@@ -1,0 +1,30 @@
+---
+import { footer } from "@config/global/footer"
+import { Text } from "@components/index"
+
+interface Props {
+	class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<footer class:list={["footer", className]}>
+	<Text class="typo-p--large" text={footer.copyright.year} />
+
+	<Text class="typo-p--large" text={footer.copyright.text} />
+</footer>
+
+<style is:global lang="scss">
+	.footer {
+		--footer-bg: var(--scheme-base);
+
+		background-color: var(--footer-bg);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: var(--space-8);
+		padding-block: var(--space-12);
+	}
+</style>

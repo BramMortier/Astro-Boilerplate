@@ -1,0 +1,57 @@
+---
+import { Number, Title } from "@components/index"
+
+interface Props {
+	class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<section id="playground-numbers" class:list={["playground-numbers", className]}>
+	<Title text="Numbers / Statistics" Tag="h4" />
+
+	<div class="playground-numbers__content">
+		<div class="playground-numbers__basic">
+			<Number number="80%" />
+			<Number number="12.000" />
+			<Number number="+2,85%" />
+			<Number number="777" />
+		</div>
+
+		<div class="playground-numbers__basic">
+			<Number number="+10.000" label="tons" />
+			<Number number="478.000" label="inhabitants" />
+			<Number number="800" label="participants" />
+			<Number number="-1.987" label="eur" />
+		</div>
+	</div>
+</section>
+
+<style is:global lang="scss">
+	.playground-numbers {
+		--playground-bg: var(--scheme-base);
+		--playground-border: var(--scheme-accent);
+
+		background-color: var(--playground-bg);
+		border: 1px solid var(--playground-border);
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-16);
+		margin: var(--space-24);
+		padding: var(--space-16) var(--space-24) var(--space-24);
+
+		&__content {
+			display: flex;
+			gap: var(--space-96);
+		}
+
+		&__basic,
+		&__complex {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-32);
+		}
+	}
+</style>

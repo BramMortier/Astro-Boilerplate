@@ -1,0 +1,10 @@
+{
+	"useTabs": true,
+	"singleQuote": false,
+	"tabWidth": 4,
+	"trailingComma": "none",
+	"semi": false,
+	"printWidth": 80,
+	"plugins": ["prettier-plugin-astro"],
+	"pluginSearchDirs": false
+}

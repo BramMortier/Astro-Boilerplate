@@ -1,0 +1,55 @@
+---
+import { Link, SocialLink } from "@components/index"
+
+interface Props {
+	class?: string
+	navLinks: any
+	socialLinks: any
+}
+
+const { class: className, navLinks, socialLinks } = Astro.props
+---
+
+<nav class:list={["c-navigation", className]}>
+	<ul class="c-navigation__links">
+		{
+			navLinks.map((link) => (
+				<li class="c-navigation__link">
+					<Link href={link.href}>{link.text}</Link>
+				</li>
+			))
+		}
+	</ul>
+
+	<ul class="c-navigation__social-links">
+		{
+			socialLinks.map((link) => (
+				<li class="c-navigation__social-link">
+					<SocialLink
+						href={link.href}
+						icon={link.icon}
+						iconSize={20}
+					/>
+				</li>
+			))
+		}
+	</ul>
+</nav>
+
+<style is:global lang="scss">
+	.c-navigation {
+		display: flex;
+		align-items: center;
+		gap: var(--space-48);
+
+		&__links {
+			display: flex;
+			gap: var(--space-64);
+		}
+
+		&__social-links {
+			display: flex;
+			gap: var(--space-12);
+		}
+	}
+</style>
