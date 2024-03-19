@@ -1,3 +1,42 @@
+:root {
+	// =========================================================================
+	// Typography propreties
+	// =========================================================================
+	--font-primary: "Open Sans", sans-serif;
+	--font-secondary: "PT Sans", sans-serif;
+
+	$font-size-values: (12, 16, 20, 24, 32, 48, 72);
+
+	@each $size in $font-size-values {
+		--fs-#{$size}: #{calc($size / 16)}rem;
+	}
+
+	$font-weight-values: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+
+	@each $weight in $font-weight-values {
+		--fw-#{$weight}: #{$weight};
+	}
+
+	$line-height-values: (
+		"none": 1,
+		"tight": 1.2,
+		"narrow": 1.4,
+		"spacious": 1.6,
+		"wide": 1.8,
+		"double": 2
+	);
+
+	@each $key, $value in $line-height-values {
+		--lh-#{$key}: #{$value};
+	}
+
+	$letter-spacing-values: (1, 2, 3, 4, 5);
+
+	@each $value in $letter-spacing-values {
+		--ls-#{$value}: #{$value};
+	}
+}
+
 // =============================================================================
 // Heading typos
 // =============================================================================
@@ -60,7 +99,7 @@ p,
 	line-height: var(--lh-spacious);
 
 	&--large {
-		font-size: var(--fs-24);
+		font-size: var(--fs-20);
 	}
 }
 

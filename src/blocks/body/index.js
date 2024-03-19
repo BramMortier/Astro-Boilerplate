@@ -1,19 +1,5 @@
 // =============================================================================
-// Global styles reset
+// Body blocks
 // =============================================================================
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	min-height: 100vh;
-}
-
-ol,
-ul {
-	list-style: none;
-}
+export { default as CardsBlock } from "@blocks/body/CardsBlock.astro"
+export { default as SplitBlock } from "@blocks/body/SplitBlock.astro"

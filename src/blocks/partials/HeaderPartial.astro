@@ -1,0 +1,36 @@
+---
+import { navigation } from "@config/global/navigation"
+import { socials } from "@config/global/socials"
+import { Navigation, Image } from "@components/index"
+
+interface Props {
+	class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<header class:list={["header", className]}>
+	<Image
+		src={navigation.logo}
+		class="c-picture--cover"
+		alt={`Site logo`}
+		sizes={`(max-width: 768px) 100vw, 20vw`}
+	/>
+
+	<Navigation navLinks={navigation.links} socialLinks={socials.links} />
+</header>
+
+<style is:global lang="scss">
+	.header {
+		display: flex;
+		justify-content: space-between;
+
+		padding-block: var(--space-16);
+
+		.c-picture__image {
+			max-width: 8.75rem;
+			height: auto;
+		}
+	}
+</style>

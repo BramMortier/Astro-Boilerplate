@@ -1,9 +1,36 @@
 ---
 import "../styles/index.scss"
 
-import { BaseLayout } from "@layouts/index"
+import { DefaultLayout } from "@layouts/index"
+import { content } from "@config/pages/homepage"
+
+import { CardsBlock, SplitBlock } from "@blocks/body/index"
+import { Container } from "@components/index"
 ---
 
-<BaseLayout title="Homepage" description="This is a page">
-	<!-- Page content -->
-</BaseLayout>
+<DefaultLayout title="Homepage" description="This is a page">
+	<Container cols={12} class="scheme-dark">
+		<CardsBlock
+			title={content.cards.title}
+			text={content.cards.text}
+			items={content.cards.items}
+		/>
+	</Container>
+
+	<Container>
+		<SplitBlock
+			title={content.split.title}
+			text={content.split.text}
+			image={content.split.image}
+		/>
+	</Container>
+
+	<Container class="scheme-dark">
+		<SplitBlock
+			title={content.splitReversed.title}
+			text={content.splitReversed.text}
+			image={content.splitReversed.image}
+			position={content.splitReversed.position}
+		/>
+	</Container>
+</DefaultLayout>

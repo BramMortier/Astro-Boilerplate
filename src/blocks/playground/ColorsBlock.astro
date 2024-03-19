@@ -1,0 +1,75 @@
+---
+import { Title } from "@components/index"
+
+const colorPalette = [
+	[
+		{ name: "--clr-black", value: "hsl(0, 0%, 0%)" },
+		{ name: "--clr-white", value: "hsl(0, 0%, 100%)" }
+	],
+	[
+		{ name: "--clr-grey-900", value: "hsl(0, 0%, 10%)" },
+		{ name: "--clr-grey-800", value: "hsl(0, 0%, 20%)" },
+		{ name: "--clr-grey-700", value: "hsl(0, 0%, 30%)" },
+		{ name: "--clr-grey-600", value: "hsl(0, 0%, 40%)" },
+		{ name: "--clr-grey-500", value: "hsl(0, 0%, 50%)" },
+		{ name: "--clr-grey-400", value: "hsl(0, 0%, 60%)" },
+		{ name: "--clr-grey-300", value: "hsl(0, 0%, 70%)" },
+		{ name: "--clr-grey-200", value: "hsl(0, 0%, 80%)" },
+		{ name: "--clr-grey-100", value: "hsl(0, 0%, 90%)" }
+	]
+]
+---
+
+<section id="playground-colors" class="playground-colors">
+	<Title text="Color palette" Tag="h4" />
+
+	<div class="playground-colors__content">
+		{
+			colorPalette.map((group) => (
+				<div class="playground-colors__group">
+					{group.map((color) => (
+						<div
+							class="playground-colors__group-swatch"
+							style={{
+								backgroundColor: color.value,
+								border:
+									color.value === "hsl(0, 0%, 100%)"
+										? "1px solid var(--clr-grey-200)"
+										: "none"
+							}}
+						/>
+					))}
+				</div>
+			))
+		}
+	</div>
+</section>
+
+<style is:global lang="scss">
+	.playground-colors {
+		display: flex;
+		gap: var(--space-16);
+		flex-direction: column;
+		margin: var(--space-24);
+		padding: var(--space-16) var(--space-24) var(--space-24);
+		border: 1px solid var(--clr-grey-200);
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-8);
+		}
+
+		&__group {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--space-8);
+		}
+
+		&__group-swatch {
+			min-width: 80px;
+			height: 200px;
+			flex-grow: 1;
+		}
+	}
+</style>

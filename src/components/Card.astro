@@ -1,0 +1,55 @@
+---
+import { Image, Title, Text, Button } from "@components/index"
+
+interface Props {
+	image?: ImageMetadata
+	title?: string
+	text?: string
+	button?: any
+	class?: string
+}
+
+const { title, text, button, image, class: className } = Astro.props
+---
+
+<article class:list={["c-card", className]}>
+	{
+		image && (
+			<Image
+				src={image}
+				alt="alt text"
+				class="c-picture--cover"
+				sizes={`(max-width: 768px) 100vw, 33vw`}
+			/>
+		)
+	}
+
+	{title && <Title text={title} Tag="h4" />}
+
+	{text && <Text text={text} />}
+
+	{button && <Button>{button.text}</Button>}
+</article>
+
+<style is:global lang="scss">
+	.c-card {
+		--card-bg: transparent;
+		--card-border: var(--scheme-contrast);
+
+		background-color: var(--card-bg);
+		border: 1px solid var(--card-border);
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-16);
+
+		padding: var(--space-16);
+		max-width: 350px;
+		width: 100%;
+		height: fit-content;
+
+		.c-picture__image {
+			height: 200px;
+		}
+	}
+</style>

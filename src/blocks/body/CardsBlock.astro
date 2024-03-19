@@ -1,0 +1,59 @@
+---
+import { Title, Text, Card } from "@components/index"
+
+interface Props {
+	title: string
+	text: string
+	items: any
+	class?: string
+}
+
+const { class: className, title, text, items } = Astro.props
+---
+
+<div class:list={["cards", className]}>
+	<div class="cards__intro">
+		<Title text={title} Tag="h3" />
+		<Text text={text} />
+	</div>
+
+	<div class="cards__list">
+		{
+			items.map((item) => (
+				<Card
+					class="cards__list-item"
+					image={item.image}
+					text={item.text}
+					button={item.button}
+				/>
+			))
+		}
+	</div>
+</div>
+
+<style is:global lang="scss">
+	.cards {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-64);
+		padding-block: var(--space-64);
+		grid-column: span 12;
+
+		&__intro {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-16);
+			max-width: 50%;
+		}
+
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			gap: var(--container-default-gap);
+		}
+
+		&__list-item {
+			grid-column: span 4;
+		}
+	}
+</style>

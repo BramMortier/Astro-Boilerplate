@@ -1,0 +1,62 @@
+---
+interface Props {
+	class?: string
+	cols?: number
+}
+
+const { class: className, cols } = Astro.props
+---
+
+<section
+	class:list={[
+		"c-container",
+		{ "c-container--layout-grid": cols },
+		className
+	]}
+>
+	<div class="c-container__content">
+		<slot />
+	</div>
+</section>
+
+<style is:global lang="scss" define:vars={{ cols: cols }}>
+	.c-container {
+		--container-width: minmax(0, var(--container-default-width));
+		--container-bound-l: var(--container-default-bound-l);
+		--container-bound-r: var(--container-default-bound-r);
+		--container-bg: var(--scheme-base);
+
+		--container-layout-grid-cols: var(--cols);
+		--container-layout-grid-gap: var(--container-default-gap);
+
+		display: grid;
+		background-color: var(--container-bg);
+		grid-template-columns:
+			auto
+			var(--container-bound-l)
+			var(--container-width)
+			var(--container-bound-r)
+			auto;
+
+		&__content {
+			grid-column: 3 / 4;
+		}
+
+		&--layout-grid {
+			.c-container__content {
+				display: grid;
+				grid-template-columns: repeat(
+					var(--container-layout-grid-cols),
+					1fr
+				);
+				gap: var(--container-layout-grid-gap);
+			}
+		}
+
+		&--full {
+			--container-width: minmax(0, var(--container-full-width));
+			--container-bound-l: var(--container-full-bound-l);
+			--container-bound-r: var(--container-full-bound-r);
+		}
+	}
+</style>
