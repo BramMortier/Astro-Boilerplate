@@ -24,7 +24,24 @@
 	// =========================================================================
 	// Spacing propreties
 	// =========================================================================
-	$spacing-values: (1, 4, 8, 12, 16, 20, 24, 32, 48, 64, 80, 96, 112, 128, 144, 160);
+	$spacing-values: (
+		1,
+		4,
+		8,
+		12,
+		16,
+		20,
+		24,
+		32,
+		48,
+		64,
+		80,
+		96,
+		112,
+		128,
+		144,
+		160
+	);
 
 	@each $value in $spacing-values {
 		--space-#{$value}: #{calc($value / 16)}rem;
@@ -40,4 +57,17 @@
 	}
 
 	--border-radius-round: 100%;
+
+	// =========================================================================
+	// Container propreties
+	// =========================================================================
+	--container-default-width: 62.5rem;
+	--container-default-gap: var(--space-24);
+	--container-default-bound-l: 1.5rem;
+	--container-default-bound-r: 1.5rem;
+
+	--container-full-width: 100vw;
+	--container-full-gap: var(--space-24);
+	--container-full-bound-l: 0;
+	--container-full-bound-r: 0;
 }

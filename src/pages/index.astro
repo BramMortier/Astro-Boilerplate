@@ -5,10 +5,23 @@ import { BaseLayout } from "@layouts/index"
 import { content } from "@config/pages/homepage"
 
 import { Cards, Split } from "@blocks/index"
+import { BaseContainer } from "@components/index"
 ---
 
 <BaseLayout title="Homepage" description="This is a page">
-	<Cards title={content.cards.title} text={content.cards.text} items={content.cards.items} />
+	<BaseContainer cols={12}>
+		<Cards
+			title={content.cards.title}
+			text={content.cards.text}
+			items={content.cards.items}
+		/>
+	</BaseContainer>
 
-	<Split title={content.split.title} text={content.split.text} image={content.split.image} />
+	<BaseContainer>
+		<Split
+			title={content.split.title}
+			text={content.split.text}
+			image={content.split.image}
+		/>
+	</BaseContainer>
 </BaseLayout>

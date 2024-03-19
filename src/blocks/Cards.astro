@@ -1,5 +1,5 @@
 ---
-import { BaseTitle, BaseText, BaseCard, BaseContainer } from "@components/index"
+import { BaseTitle, BaseText, BaseCard } from "@components/index"
 
 interface Props {
 	title: string
@@ -11,22 +11,25 @@ interface Props {
 const { class: className, title, text, items } = Astro.props
 ---
 
-<BaseContainer class={className}>
-	<div class="cards">
-		<div class="cards__intro">
-			<BaseTitle text={title} Tag="h3" />
-			<BaseText text={text} />
-		</div>
-
-		<div class="cards__list">
-			{
-				items.map((item) => (
-					<BaseCard image={item.image} text={item.text} button={item.button} />
-				))
-			}
-		</div>
+<div class:list={["cards", className]}>
+	<div class="cards__intro">
+		<BaseTitle text={title} Tag="h3" />
+		<BaseText text={text} />
 	</div>
-</BaseContainer>
+
+	<div class="cards__list">
+		{
+			items.map((item) => (
+				<BaseCard
+					class="cards__list-item"
+					image={item.image}
+					text={item.text}
+					button={item.button}
+				/>
+			))
+		}
+	</div>
+</div>
 
 <style scoped lang="scss">
 	.cards {
@@ -34,6 +37,7 @@ const { class: className, title, text, items } = Astro.props
 		flex-direction: column;
 		gap: var(--space-64);
 		padding-block: var(--space-64);
+		grid-column: span 12;
 
 		&__intro {
 			display: flex;
@@ -43,9 +47,13 @@ const { class: className, title, text, items } = Astro.props
 		}
 
 		&__list {
-			display: flex;
-			gap: var(--space-16);
-			justify-content: space-between;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			gap: var(--container-default-gap);
 		}
+	}
+
+	.cards__list-item {
+		grid-column: span 4;
 	}
 </style>

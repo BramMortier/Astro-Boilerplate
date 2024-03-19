@@ -2,6 +2,7 @@
 import "../styles/index.scss"
 
 import { Header } from "@blocks/index"
+import { BaseContainer } from "@components/index"
 
 interface Props {
 	title: string
@@ -25,7 +26,9 @@ const { title, description } = Astro.props
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
 	<body class="base-layout scheme-default">
-		<Header />
+		<BaseContainer>
+			<Header />
+		</BaseContainer>
 
 		<main>
 			<slot />

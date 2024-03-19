@@ -6,12 +6,13 @@ interface Props {
 	title?: string
 	text?: string
 	button?: any
+	class?: string
 }
 
-const { title, text, button, image } = Astro.props
+const { title, text, button, image, class: className } = Astro.props
 ---
 
-<article class="c-card">
+<article class:list={["c-card", className]}>
 	{
 		image && (
 			<BaseImage
