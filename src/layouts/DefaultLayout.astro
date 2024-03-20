@@ -26,7 +26,7 @@ const { title, description } = Astro.props
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
 	<body class="base-layout scheme-default">
-		<Container class="scheme-dark">
+		<Container>
 			<HeaderPartial />
 		</Container>
 
@@ -34,7 +34,7 @@ const { title, description } = Astro.props
 			<slot />
 		</main>
 
-		<Container>
+		<Container class="scheme-dark">
 			<FooterPartial />
 		</Container>
 	</body>

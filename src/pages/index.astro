@@ -8,29 +8,4 @@ import { CardsBlock, SplitBlock } from "@blocks/body/index"
 import { Container } from "@components/index"
 ---
 
-<DefaultLayout title="Homepage" description="This is a page">
-	<Container cols={12} class="scheme-dark">
-		<CardsBlock
-			title={content.cards.title}
-			text={content.cards.text}
-			items={content.cards.items}
-		/>
-	</Container>
-
-	<Container>
-		<SplitBlock
-			title={content.split.title}
-			text={content.split.text}
-			image={content.split.image}
-		/>
-	</Container>
-
-	<Container class="scheme-dark">
-		<SplitBlock
-			title={content.splitReversed.title}
-			text={content.splitReversed.text}
-			image={content.splitReversed.image}
-			position={content.splitReversed.position}
-		/>
-	</Container>
-</DefaultLayout>
+<DefaultLayout title="Homepage" description="This is a page" />

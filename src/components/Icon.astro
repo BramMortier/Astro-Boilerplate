@@ -24,7 +24,7 @@ interface Props {
 	size?: number
 }
 
-const { name, class: className, rotation, size = 16 } = Astro.props
+const { name, class: className, rotation = 0, size = 16 } = Astro.props
 
 const iconMap = {
 	"hero-illustration": HeroIllustration,
@@ -57,12 +57,17 @@ const IconComponent = iconMap[name]
 	define:vars={{ iconSize: `${size}px`, rotation: `${rotation}deg` }}
 >
 	.c-icon {
+		--icon-color: var(--scheme-contrast);
+
+		color: var(--icon-color);
+
 		display: flex;
 		justify-self: center;
 		align-items: center;
 		width: var(--iconSize);
 		height: var(--iconSize);
 		transform: rotate(var(--rotation));
+		transition: color ease-out 0.15s;
 
 		&--asset {
 			width: 100%;

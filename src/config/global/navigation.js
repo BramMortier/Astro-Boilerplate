@@ -1,18 +1,12 @@
-import { example16_9 } from "@assets/images/placeholders/index"
-
 export const navigation = {
-	logo: example16_9,
+	logo: "bookmark",
 	links: [
 		{
-			text: "Home",
+			text: "Features",
 			href: "#"
 		},
 		{
-			text: "About",
-			href: "#"
-		},
-		{
-			text: "Blog",
+			text: "Pricing",
 			href: "#"
 		},
 		{

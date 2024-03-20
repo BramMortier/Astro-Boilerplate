@@ -1,7 +1,6 @@
 ---
-import { navigation } from "@config/global/navigation"
-import { socials } from "@config/global/socials"
-import { Navigation, Image } from "@components/index"
+import { header } from "@config/global/header"
+import { Navigation, Icon, Button } from "@components/index"
 
 interface Props {
 	class?: string
@@ -11,26 +10,32 @@ const { class: className } = Astro.props
 ---
 
 <header class:list={["header", className]}>
-	<Image
-		src={navigation.logo}
-		class="c-picture--cover"
-		alt={`Site logo`}
-		sizes={`(max-width: 768px) 100vw, 20vw`}
-	/>
+	<Icon name={header.logo} class="c-icon--asset" />
 
-	<Navigation navLinks={navigation.links} socialLinks={socials.links} />
+	<div class="header__right">
+		<Navigation />
+
+		<Button class="c-button--secondary c-button--uppercase">Login</Button>
+	</div>
 </header>
 
 <style is:global lang="scss">
 	.header {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 
-		padding-block: var(--space-16);
+		padding-block: var(--space-48);
 
-		.c-picture__image {
-			max-width: 8.75rem;
-			height: auto;
+		&__right {
+			display: flex;
+			align-items: center;
+			gap: var(--space-48);
+		}
+
+		.c-icon {
+			height: 100%;
+			width: auto;
 		}
 	}
 </style>

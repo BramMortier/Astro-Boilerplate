@@ -1,6 +1,7 @@
 ---
+import { socials } from "@config/global/socials"
 import { footer } from "@config/global/footer"
-import { Text } from "@components/index"
+import { Icon, Navigation, SocialLink } from "@components/index"
 
 interface Props {
 	class?: string
@@ -10,9 +11,25 @@ const { class: className } = Astro.props
 ---
 
 <footer class:list={["footer", className]}>
-	<Text class="typo-p--large" text={footer.copyright.year} />
+	<div class="footer__left">
+		<Icon name={footer.logo} class="c-icon--asset" />
 
-	<Text class="typo-p--large" text={footer.copyright.text} />
+		<Navigation />
+	</div>
+
+	<ul class="footer__right">
+		{
+			socials.links.map((link) => (
+				<li class="c-navigation__social-link">
+					<SocialLink
+						href={link.href}
+						icon={link.icon}
+						iconSize={24}
+					/>
+				</li>
+			))
+		}
+	</ul>
 </footer>
 
 <style is:global lang="scss">
@@ -22,9 +39,19 @@ const { class: className } = Astro.props
 		background-color: var(--footer-bg);
 
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		gap: var(--space-8);
-		padding-block: var(--space-12);
+		padding-block: var(--space-32);
+
+		&__left {
+			display: flex;
+			gap: var(--space-64);
+		}
+
+		&__right {
+			display: flex;
+			gap: var(--space-12);
+		}
 	}
 </style>

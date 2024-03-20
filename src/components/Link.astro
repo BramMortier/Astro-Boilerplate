@@ -16,7 +16,6 @@ const { href, class: className } = Astro.props
 <style is:global lang="scss">
 	.c-link {
 		--link-color: var(--scheme-contrast);
-		--link-underline-color: var(--scheme-contrast);
 
 		color: var(--link-color);
 		text-decoration: none;
@@ -28,23 +27,13 @@ const { href, class: className } = Astro.props
 		gap: var(--space-12);
 
 		font-family: var(--font-primary);
-		font-size: var(--fs-20);
-
-		&::after {
-			position: absolute;
-			content: "";
-			bottom: -0.1rem;
-			left: 0;
-			height: 1px;
-			width: 0;
-			background-color: var(--link-underline-color);
-			transition: all ease-out 0.15s;
-		}
+		font-size: var(--fs-14);
+		text-transform: uppercase;
+		letter-spacing: var(--ls-1);
+		transition: color ease-out 0.15s;
 
 		&:hover {
-			&::after {
-				width: 100%;
-			}
+			--link-color: var(--scheme-accent-alt);
 		}
 	}
 </style>

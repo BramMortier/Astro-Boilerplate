@@ -28,8 +28,9 @@ const { class: className, ...props } = Astro.props
 		gap: var(--space-12);
 
 		font-family: var(--font-primary);
-		font-size: var(--fs-16);
+		font-size: var(--fs-14);
 		font-weight: var(--fw-500);
+
 		outline: none;
 		padding-inline: var(--space-32);
 		border-radius: var(--border-radius-5);
@@ -37,6 +38,8 @@ const { class: className, ...props } = Astro.props
 		transition: all ease 0.2s;
 
 		&:hover {
+			cursor: pointer;
+
 			--button-bg: transparent;
 			--button-color: var(--scheme-accent);
 			--button-color: var(--scheme-accent);
@@ -68,8 +71,8 @@ const { class: className, ...props } = Astro.props
 			}
 		}
 
-		&:hover {
-			cursor: pointer;
+		&--uppercase {
+			text-transform: uppercase;
 		}
 	}
 </style>
