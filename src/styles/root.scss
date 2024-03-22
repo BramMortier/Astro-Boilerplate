@@ -44,7 +44,7 @@
 	// =========================================================================
 	// Extra propreties
 	// =========================================================================
-	$border-radius-values: (3, 5, 10);
+	$border-radius-values: (5, 10, 15);
 
 	@each $value in $border-radius-values {
 		--border-radius-#{$value}: #{$value}px;

@@ -14,10 +14,10 @@ const { class: className } = Astro.props
 	id="playground-navigation"
 	class:list={["playground-navigation", className]}
 >
-	<Title text="Navigation" Tag="h2" />
+	<Title text="Navigation" Tag="h3" />
 
 	<div class="playground-navigation__content">
-		<Navigation navLinks={navigation.links} socialLinks={socials.links} />
+		<Navigation />
 	</div>
 </section>
 

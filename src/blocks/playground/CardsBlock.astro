@@ -1,8 +1,6 @@
 ---
 import { Card, Title } from "@components/index"
 
-import { example5_4 } from "@assets/images/placeholders/index"
-
 interface Props {
 	class?: string
 }
@@ -11,12 +9,37 @@ const { class: className } = Astro.props
 ---
 
 <section id="playground-cards" class:list={["playground-cards", className]}>
-	<Title text="Cards & Splits" Tag="h2" />
+	<Title text="Cards" Tag="h3" />
 
 	<div class="playground-cards__content">
-		<div class="playground-cards__basic"></div>
+		<div class="playground-cards__basic">
+			<Card
+				title="Add to Firefox"
+				text="Minimum version 55"
+				icon="firefox"
+				button={{
+					text: "Add & install extension"
+				}}
+			/>
 
-		<div class="playground-cards__complex"></div>
+			<Card
+				title="Add to Chrome"
+				text="Minimum version 62"
+				icon="chrome"
+				button={{
+					text: "Add & install extension"
+				}}
+			/>
+
+			<Card
+				title="Add to Opera"
+				text="Minimum version 46"
+				icon="opera"
+				button={{
+					text: "Add & install extension"
+				}}
+			/>
+		</div>
 	</div>
 </section>
 

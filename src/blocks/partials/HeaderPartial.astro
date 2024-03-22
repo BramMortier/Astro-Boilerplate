@@ -16,10 +16,14 @@ const { class: className } = Astro.props
 		<Navigation />
 
 		<Button class="c-button--secondary c-button--uppercase">Login</Button>
+
+		<Icon name="hamburger" size={20} />
 	</div>
 </header>
 
 <style is:global lang="scss">
+	@use "@styles/utils" as *;
+
 	.header {
 		display: flex;
 		align-items: center;
@@ -31,9 +35,24 @@ const { class: className } = Astro.props
 			display: flex;
 			align-items: center;
 			gap: var(--space-48);
+
+			& > .c-icon {
+				@include min-width("tablet") {
+					display: none;
+				}
+			}
+
+			& > .c-button,
+			& > .c-navigation {
+				display: none;
+
+				@include min-width("tablet") {
+					display: flex;
+				}
+			}
 		}
 
-		.c-icon {
+		& > .c-icon {
 			height: 100%;
 			width: auto;
 		}
