@@ -1,0 +1,131 @@
+---
+import { Text, Title, Image, Button, Split } from "@components/index"
+
+interface Props {
+	tabs: any
+	class?: string
+}
+
+const { class: className, tabs } = Astro.props
+---
+
+<js-tabs class:list={["c-tabs", className]}>
+	<ul class="c-tabs__controls">
+		{
+			tabs.map((item) => (
+				<li class="c-tabs__control-option">
+					<Text text={item.name} />
+				</li>
+			))
+		}
+	</ul>
+
+	<ul class="c-tabs__tab-options">
+		{
+			tabs.map((item) => (
+				<li class="c-tabs__tab-option">
+					<div class="c-tabs__tab-option-left">
+						<Image
+							src={item.image}
+							alt="this is a split image"
+							sizes={`(max-width: 768px) 100vw, 20vw`}
+						/>
+					</div>
+
+					<div class="c-tabs__tab-option-right">
+						<Title text={item.title} Tag="h2" />
+
+						<Text text={item.text} />
+
+						<Button>{item.button.text}</Button>
+					</div>
+				</li>
+			))
+		}
+	</ul>
+</js-tabs>
+
+<style is:global lang="scss">
+	.c-tabs {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		&__controls {
+			display: flex;
+			border-bottom: 1px solid var(--scheme-extra-subtle);
+			width: fit-content;
+			margin-bottom: var(--space-64);
+		}
+
+		&__control-option {
+			padding: var(--space-24) var(--space-48);
+			border-bottom: 4px solid transparent;
+			cursor: pointer;
+			transition: all ease-out 0.15s;
+
+			.c-text {
+				pointer-events: none;
+			}
+
+			&:hover .c-text {
+				color: var(--scheme-accent-alt);
+			}
+
+			&--active {
+				border-bottom: 4px solid var(--scheme-accent-alt);
+
+				.c-text {
+					color: var(--scheme-contrast);
+				}
+			}
+		}
+
+		&__tab-option {
+			display: none;
+
+			&--active {
+				display: grid;
+				max-width: 1200px;
+				min-height: 416px;
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+
+		&__tab-option-right {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: start;
+			gap: var(--space-24);
+			padding-left: var(--space-96);
+		}
+
+		&__tab-option-left {
+			display: flex;
+			position: relative;
+			justify-content: flex-end;
+
+			.c-picture {
+				width: fit-content;
+				z-index: 10;
+
+				&__image {
+					height: 100%;
+				}
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 25%;
+				right: 10%;
+				height: 350px;
+				width: 50vw;
+				border-top-right-radius: var(--border-radius-200);
+				border-bottom-right-radius: var(--border-radius-200);
+				background-color: var(--scheme-accent);
+			}
+		}
+	}
+</style>

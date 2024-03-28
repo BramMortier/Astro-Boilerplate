@@ -1,0 +1,59 @@
+---
+import { Title, Text, Accordion, Button } from "@components/index"
+
+interface Props {
+	title?: string
+	text?: string
+	questions: any
+	button?: any
+	class?: string
+}
+
+const { class: className, title, text, questions, button } = Astro.props
+---
+
+<div class:list={["c-faq", className]}>
+	<div class="c-faq__intro">
+		<Title text={title} Tag="h2" />
+
+		<Text text={text} />
+	</div>
+	<ul class="c-faq__questions">
+		{
+			questions.map((item) => (
+				<li class="c-faq__question">
+					<Accordion
+						triggerText={item.question}
+						content={item.awnser}
+					/>
+				</li>
+			))
+		}
+	</ul>
+	<Button>{button.text}</Button>
+</div>
+
+<style is:global lang="scss">
+	.c-faq {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding-block: var(--space-96);
+
+		&__intro {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-32);
+			text-align: center;
+			max-width: 37.5rem;
+			margin-bottom: var(--space-64);
+		}
+
+		&__questions {
+			display: flex;
+			flex-direction: column;
+			border-top: 1px solid var(--scheme-extra-subtle);
+			margin-bottom: var(--space-64);
+		}
+	}
+</style>

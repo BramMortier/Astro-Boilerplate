@@ -22,6 +22,11 @@ const { text, Tag = "p", class: className } = Astro.props
 		font-optical-sizing: auto;
 		font-weight: var(--fw-400);
 		line-height: var(--lh-spacious);
+		transition: all ease-out 0.15s;
+
+		&--small {
+			font-size: var(--fs-14);
+		}
 
 		&--strong {
 			--text-color: var(--scheme-contrast);

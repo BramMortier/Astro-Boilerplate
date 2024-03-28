@@ -1,17 +1,18 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@assets/*": ["src/assets/*"],
-            "@config/*": ["src/config/*"],
-            "@blocks/*": ["src/blocks/*"],
-            "@components/*": ["src/components/*"],
-            "@content/*": ["src/content/*"],
-            "@layouts/*": ["src/layouts/*"],
-            "@pages/*": ["src/pages/*"],
-            "@styles/*": ["src/styles/*"],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@assets/*": ["src/assets/*"],
+			"@config/*": ["src/config/*"],
+			"@blocks/*": ["src/blocks/*"],
+			"@components/*": ["src/components/*"],
+			"@content/*": ["src/content/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@pages/*": ["src/pages/*"],
+			"@scripts/*": ["src/scripts/*"],
+			"@styles/*": ["src/styles/*"],
 
-            "@playground/*": ["src/pages/playground/*"]
-        }
-    }
+			"@playground/*": ["src/pages/playground/*"]
+		}
+	}
 }

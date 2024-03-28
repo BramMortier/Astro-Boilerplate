@@ -1,0 +1,65 @@
+---
+import { Text, Icon } from "@components/index"
+
+interface Props {
+	class?: string
+	triggerText: string
+	content: string
+}
+
+const { class: className, triggerText, content } = Astro.props
+---
+
+<js-accordion class:list={["c-accordion", className]}>
+	<div class="c-accordion__trigger">
+		<Text class="c-text--strong" text={triggerText} />
+
+		<Icon name="arrow" size={20} />
+	</div>
+	<div class="c-accordion__content">
+		<Text text={content} />
+	</div>
+</js-accordion>
+
+<style is:global lang="scss">
+	.c-accordion {
+		display: flex;
+		flex-direction: column;
+		width: 540px;
+		border-bottom: 1px solid var(--scheme-extra-subtle);
+
+		&__trigger {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-block: var(--space-24);
+			cursor: pointer;
+
+			&:hover {
+				.c-text {
+					color: var(--scheme-accent-alt);
+				}
+			}
+
+			.c-icon {
+				color: var(--scheme-accent);
+			}
+		}
+
+		&__content {
+			display: none;
+			padding-bottom: var(--space-24);
+		}
+
+		&--open {
+			.c-accordion__content {
+				display: flex;
+			}
+
+			.c-icon {
+				transform: rotate(180deg);
+				color: var(--scheme-accent-alt);
+			}
+		}
+	}
+</style>

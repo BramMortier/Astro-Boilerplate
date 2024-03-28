@@ -19,7 +19,7 @@ const { title, text, button, icon, class: className } = Astro.props
 		<div class="c-card__info scheme-default">
 			{title && <Title text={title} Tag="h3" />}
 
-			{text && <Text text={text} />}
+			{text && <Text class="c-text--small" text={text} />}
 		</div>
 	</div>
 
@@ -36,6 +36,8 @@ const { title, text, button, icon, class: className } = Astro.props
 
 		background-color: var(--card-bg);
 		border-radius: var(--border-radius-15);
+		box-shadow: var(--shadow-default);
+		width: fit-content;
 
 		&__top {
 			display: flex;
@@ -49,7 +51,7 @@ const { title, text, button, icon, class: className } = Astro.props
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			gap: var(--space-8);
+			gap: var(--space-12);
 		}
 
 		&__cta {

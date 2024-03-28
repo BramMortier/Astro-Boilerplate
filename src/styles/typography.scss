@@ -4,7 +4,7 @@
 	// =========================================================================
 	--font-primary: "Rubik", sans-serif;
 
-	$font-size-values: (12, 14, 16, 18, 20, 24, 32, 48, 72);
+	$font-size-values: (12, 14, 16, 18, 20, 24, 32, 48, 56, 72);
 
 	@each $size in $font-size-values {
 		--fs-#{$size}: #{calc($size / 16)}rem;
@@ -18,7 +18,7 @@
 
 	$line-height-values: (
 		"none": 1,
-		"tight": 1.2,
+		"tight": 1.1,
 		"narrow": 1.4,
 		"spacious": 1.6,
 		"wide": 1.8,

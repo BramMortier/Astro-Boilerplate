@@ -1,0 +1,40 @@
+---
+import { Title, Text, Tabs } from "@components/index"
+
+interface Props {
+	title?: string
+	text?: string
+	tabs: any
+	class?: string
+}
+
+const { title, text, tabs, class: className } = Astro.props
+---
+
+<div class:list={["tabs", className]}>
+	<div class="tabs__intro">
+		<Title text={title} Tag="h2" />
+
+		<Text text={text} />
+	</div>
+
+	<Tabs tabs={tabs} />
+</div>
+
+<style is:global lang="scss">
+	.tabs {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-block: var(--space-96) var(--space-160);
+
+		&__intro {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-32);
+			text-align: center;
+			max-width: 37.5rem;
+			margin-bottom: var(--space-48);
+		}
+	}
+</style>

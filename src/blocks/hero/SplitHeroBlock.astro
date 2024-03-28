@@ -1,0 +1,31 @@
+---
+import { Split } from "@components/index"
+
+interface Props {
+	title: string
+	titleTag?: string
+	text: string
+	buttons: any
+	image: ImageMetadata
+	class?: string
+}
+
+const { class: className, title, titleTag, text, buttons, image } = Astro.props
+---
+
+<div class:list={["split-hero", className]}>
+	<Split
+		class="c-split--reversed"
+		title={title}
+		titleTag={titleTag}
+		text={text}
+		buttons={buttons}
+		image={image}
+	/>
+</div>
+
+<style is:global lang="scss">
+	.split-hero {
+		padding-block: var(--space-96);
+	}
+</style>

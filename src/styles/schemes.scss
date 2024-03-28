@@ -5,6 +5,7 @@
 	--scheme-base: var(--clr-white);
 	--scheme-contrast: var(--clr-very-dark-blue);
 	--scheme-subtle: var(--clr-grayish-blue);
+	--scheme-extra-subtle: var(--clr-light-gray);
 
 	--scheme-accent: var(--clr-soft-blue);
 	--scheme-accent-alt: var(--clr-soft-red);
@@ -12,8 +13,9 @@
 
 .scheme-dark {
 	--scheme-base: var(--clr-very-dark-blue);
-	--scheme-subtle: var(--clr-white);
 	--scheme-contrast: var(--clr-white);
+	--scheme-subtle: var(--clr-white);
+	--scheme-extra-subtle: var(--clr-light-gray);
 
 	--scheme-accent: var(--clr-soft-blue);
 	--scheme-accent-alt: var(--clr-soft-red);

@@ -4,8 +4,44 @@ import "../styles/index.scss"
 import { DefaultLayout } from "@layouts/index"
 import { content } from "@config/pages/homepage"
 
-import { CardsBlock, SplitBlock } from "@blocks/body/index"
+import SplitHeroBlock from "@blocks/hero/SplitHeroBlock.astro"
+import { CardsBlock, FaqBlock, TabsBlock } from "@blocks/body/index"
 import { Container } from "@components/index"
 ---
 
-<DefaultLayout title="Homepage" description="This is a page" />
+<DefaultLayout title="Homepage" description="This is a page">
+	<Container>
+		<SplitHeroBlock
+			title={content.hero.title}
+			titleTag={content.hero.titleTag}
+			text={content.hero.text}
+			buttons={content.hero.buttons}
+			image={content.hero.image}
+		/>
+	</Container>
+
+	<Container>
+		<TabsBlock
+			title={content.features.title}
+			text={content.features.text}
+			tabs={content.features.tabs}
+		/>
+	</Container>
+
+	<Container>
+		<CardsBlock
+			title={content.download.title}
+			text={content.download.text}
+			cards={content.download.cards}
+		/>
+	</Container>
+
+	<Container>
+		<FaqBlock
+			title={content.faq.title}
+			text={content.faq.text}
+			questions={content.faq.questions}
+			button={content.faq.button}
+		/>
+	</Container>
+</DefaultLayout>

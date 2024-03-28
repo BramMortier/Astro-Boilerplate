@@ -1,0 +1,25 @@
+---
+import { Button } from "@components/index"
+
+interface Props {
+	class?: string
+	buttons: any
+}
+
+const { class: className, buttons } = Astro.props
+---
+
+<div class:list={["c-button-group", className]}>
+	{buttons.map((item) => <Button class={item.class}>{item.text}</Button>)}
+</div>
+
+<style is:global lang="scss">
+	.c-button-group {
+		display: flex;
+		gap: var(--space-8);
+
+		&--vertical {
+			flex-direction: column;
+		}
+	}
+</style>
